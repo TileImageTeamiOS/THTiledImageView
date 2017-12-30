@@ -18,36 +18,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4WP-ch-thv">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bench" translatesAutoresizingMaskIntoConstraints="NO" id="JA2-o4-ZSX">
-                                        <rect key="frame" x="0.0" y="0.0" width="5214" height="7300"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="JA2-o4-ZSX" firstAttribute="leading" secondItem="4WP-ch-thv" secondAttribute="leading" id="OYC-cc-31b"/>
-                                    <constraint firstAttribute="bottom" secondItem="JA2-o4-ZSX" secondAttribute="bottom" id="QlC-Tp-00Z"/>
-                                    <constraint firstItem="JA2-o4-ZSX" firstAttribute="top" secondItem="4WP-ch-thv" secondAttribute="top" id="alW-GL-2IL"/>
-                                    <constraint firstAttribute="trailing" secondItem="JA2-o4-ZSX" secondAttribute="trailing" id="qpj-nL-DFd"/>
-                                </constraints>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYF-kD-Url" customClass="TileImageScrollView" customModule="MyTileImageViewer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4WP-ch-thv" secondAttribute="trailing" id="1AT-1r-DoW"/>
-                            <constraint firstItem="4WP-ch-thv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1RS-Xw-jxx"/>
-                            <constraint firstItem="4WP-ch-thv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="N7w-D1-gKc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4WP-ch-thv" secondAttribute="bottom" id="y0R-Et-UW5"/>
+                            <constraint firstItem="nYF-kD-Url" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3CU-aP-thU"/>
+                            <constraint firstItem="nYF-kD-Url" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ago-hG-HLe"/>
+                            <constraint firstItem="nYF-kD-Url" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bOD-F8-10A"/>
+                            <constraint firstItem="nYF-kD-Url" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kKo-qe-680"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tileImageScrollView" destination="nYF-kD-Url" id="j7z-bL-9g0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="124.58770614692655"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="bench" width="5214" height="7300"/>
-    </resources>
 </document>

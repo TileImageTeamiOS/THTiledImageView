@@ -7,16 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E0C4F9B1FF7357D00778CED /* TileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9A1FF7357D00778CED /* TileImageView.swift */; };
+		7E0C4F9D1FF73CAB00778CED /* TileImageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9C1FF73CAB00778CED /* TileImageContentView.swift */; };
+		7E0C4F9F1FF73F5100778CED /* MyTileImageViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */; };
 		7EF71CDC1FF4C13D001C3EF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF71CDB1FF4C13D001C3EF2 /* AppDelegate.swift */; };
 		7EF71CDE1FF4C13D001C3EF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF71CDD1FF4C13D001C3EF2 /* ViewController.swift */; };
 		7EF71CE11FF4C13D001C3EF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EF71CDF1FF4C13D001C3EF2 /* Main.storyboard */; };
 		7EF71CE31FF4C13D001C3EF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EF71CE21FF4C13D001C3EF2 /* Assets.xcassets */; };
 		7EF71CE61FF4C13D001C3EF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EF71CE41FF4C13D001C3EF2 /* LaunchScreen.storyboard */; };
 		7EF71CEF1FF4C58B001C3EF2 /* TileImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF71CEE1FF4C58B001C3EF2 /* TileImageScrollView.swift */; };
-		7EF71CF11FF4C612001C3EF2 /* TileImageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF71CF01FF4C612001C3EF2 /* TileImageDataSource.swift */; };
+		7EF71CF11FF4C612001C3EF2 /* TileImageViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF71CF01FF4C612001C3EF2 /* TileImageViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E0C4F9A1FF7357D00778CED /* TileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageView.swift; sourceTree = "<group>"; };
+		7E0C4F9C1FF73CAB00778CED /* TileImageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageContentView.swift; sourceTree = "<group>"; };
+		7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTileImageViewDataSource.swift; sourceTree = "<group>"; };
 		7EF71CD81FF4C13D001C3EF2 /* MyTileImageViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTileImageViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF71CDB1FF4C13D001C3EF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EF71CDD1FF4C13D001C3EF2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,7 +31,7 @@
 		7EF71CE51FF4C13D001C3EF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7EF71CE71FF4C13D001C3EF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EF71CEE1FF4C58B001C3EF2 /* TileImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageScrollView.swift; sourceTree = "<group>"; };
-		7EF71CF01FF4C612001C3EF2 /* TileImageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageDataSource.swift; sourceTree = "<group>"; };
+		7EF71CF01FF4C612001C3EF2 /* TileImageViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +45,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E0C4F971FF730A100778CED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7EF71CDB1FF4C13D001C3EF2 /* AppDelegate.swift */,
+				7EF71CE21FF4C13D001C3EF2 /* Assets.xcassets */,
+				7EF71CE41FF4C13D001C3EF2 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		7EF71CCF1FF4C13D001C3EF2 = {
 			isa = PBXGroup;
 			children = (
@@ -58,30 +74,23 @@
 		7EF71CDA1FF4C13D001C3EF2 /* MyTileImageViewer */ = {
 			isa = PBXGroup;
 			children = (
+				7E0C4F971FF730A100778CED /* Supporting Files */,
 				7EF71CE71FF4C13D001C3EF2 /* Info.plist */,
 				7EF71CF21FF4C90C001C3EF2 /* TileImageView */,
-				7EF71CED1FF4C560001C3EF2 /* Supporting Files */,
 				7EF71CDD1FF4C13D001C3EF2 /* ViewController.swift */,
+				7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */,
 				7EF71CDF1FF4C13D001C3EF2 /* Main.storyboard */,
 			);
 			path = MyTileImageViewer;
-			sourceTree = "<group>";
-		};
-		7EF71CED1FF4C560001C3EF2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7EF71CDB1FF4C13D001C3EF2 /* AppDelegate.swift */,
-				7EF71CE21FF4C13D001C3EF2 /* Assets.xcassets */,
-				7EF71CE41FF4C13D001C3EF2 /* LaunchScreen.storyboard */,
-			);
-			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		7EF71CF21FF4C90C001C3EF2 /* TileImageView */ = {
 			isa = PBXGroup;
 			children = (
 				7EF71CEE1FF4C58B001C3EF2 /* TileImageScrollView.swift */,
-				7EF71CF01FF4C612001C3EF2 /* TileImageDataSource.swift */,
+				7EF71CF01FF4C612001C3EF2 /* TileImageViewDataSource.swift */,
+				7E0C4F9A1FF7357D00778CED /* TileImageView.swift */,
+				7E0C4F9C1FF73CAB00778CED /* TileImageContentView.swift */,
 			);
 			path = TileImageView;
 			sourceTree = "<group>";
@@ -96,6 +105,7 @@
 				7EF71CD41FF4C13D001C3EF2 /* Sources */,
 				7EF71CD51FF4C13D001C3EF2 /* Frameworks */,
 				7EF71CD61FF4C13D001C3EF2 /* Resources */,
+				7E063CF51FF6258100347F57 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -153,14 +163,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7E063CF51FF6258100347F57 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7EF71CD41FF4C13D001C3EF2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EF71CF11FF4C612001C3EF2 /* TileImageDataSource.swift in Sources */,
+				7EF71CF11FF4C612001C3EF2 /* TileImageViewDataSource.swift in Sources */,
+				7E0C4F9F1FF73F5100778CED /* MyTileImageViewDataSource.swift in Sources */,
 				7EF71CEF1FF4C58B001C3EF2 /* TileImageScrollView.swift in Sources */,
+				7E0C4F9D1FF73CAB00778CED /* TileImageContentView.swift in Sources */,
 				7EF71CDE1FF4C13D001C3EF2 /* ViewController.swift in Sources */,
+				7E0C4F9B1FF7357D00778CED /* TileImageView.swift in Sources */,
 				7EF71CDC1FF4C13D001C3EF2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

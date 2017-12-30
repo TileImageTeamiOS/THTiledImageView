@@ -8,7 +8,34 @@
 
 import UIKit
 
-class TileImageScrollView: UIScrollView {
+protocol TileImageScrollViewDelegate: class {
+    func scrollViewDidZoom(scrollView: TileImageScrollView)
+}
 
-    
+public class TileImageScrollView: UIScrollView {
+
+    private var contentView: TileImageContentView?
+    weak var dataSource: TileImageViewDataSource?
+
+    public func set(dataSource: TileImageViewDataSource) {
+        self.dataSource = dataSource
+
+        let tileImageView = TileImageView(imageSize: dataSource.imageSize)
+
+        contentView = TileImageContentView(tileImageView: tileImageView, dataSource: dataSource)
+        if let contentView = contentView {
+            self.addSubview(contentView)
+        }
+    }
+
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        self.contentSize = (contentView?.frame.size)!
+    }
+}
+
+extension TileImageScrollView: UIScrollViewDelegate {
+    public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return contentView
+    }
 }
