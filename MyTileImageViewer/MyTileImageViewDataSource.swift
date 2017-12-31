@@ -6,7 +6,6 @@
 //  Copyright © 2017년 홍창남. All rights reserved.
 //
 
-
 import UIKit
 
 class MyTileImageViewDataSource: TileImageViewDataSource {
@@ -31,26 +30,32 @@ class MyTileImageViewDataSource: TileImageViewDataSource {
         let session = URLSession(configuration: .default)
         let request = URLRequest(url: backgroundImageURL)
 
-        let dataTask = session.dataTask(with: request) { data, response, error in
-            guard error == nil else {
-                print("Error occur: \(String(describing: error))")
-                return
-            }
-            guard let response = response as? HTTPURLResponse else {
-                return
-            }
-
-            switch response.statusCode {
-            case 200:
-                if let data = data, let image = UIImage(data: data) {
-                    self.backgroundImage = image
-                    completion(self.backgroundImage)
+        if backgroundImageURL.absoluteString.contains("https") {
+            let dataTask = session.dataTask(with: request) { data, response, error in
+                guard error == nil else {
+                    print("Error occur: \(String(describing: error))")
+                    return
                 }
-            default:
-                completion(nil)
+                guard let response = response as? HTTPURLResponse else {
+                    return
+                }
+
+                switch response.statusCode {
+                case 200:
+                    if let data = data, let image = UIImage(data: data) {
+                        self.backgroundImage = image
+                        completion(self.backgroundImage)
+                    }
+                default:
+                    completion(nil)
+                }
             }
+            dataTask.resume()
+        } else {
+            self.backgroundImage = UIImage(contentsOfFile: backgroundImageURL.path)!
+            completion(self.backgroundImage)
         }
-        dataTask.resume()
+
     }
 
 }

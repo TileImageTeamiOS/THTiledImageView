@@ -16,10 +16,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(tileImageScrollView)
         let imageSize = CGSize(width: 5214, height: 7300)
         let tileSize = CGSize(width: 256, height: 256)
-        let imageURL = URL(string: "https://dl.dropbox.com/s/t1xwici6yuxplo0/bench.jpg")!
+
+        let imageURL = Bundle.main.url(forResource: "bench", withExtension: "jpg")!
+//        let imageURL = URL(string: "https://dl.dropbox.com/s/t1xwici6yuxplo0/bench.jpg")!
 
         setupExample(imageSize: imageSize, tileSize: tileSize, imageURL: imageURL)
     }
@@ -31,7 +32,6 @@ class ViewController: UIViewController {
         tileImageScrollView.set(dataSource: dataSource!)
 
         dataSource?.requestBackgroundImage { (image) in
-
             if let image = image {
                 print(image)
             }

@@ -20,7 +20,8 @@ class TileImageContentView: UIView {
         self.backgroundImageView = UIImageView(frame: tileImageView.bounds)
         super.init(frame: tileImageView.frame)
 
-        backgroundImageView.contentMode = .scaleAspectFit
+        // TODO: 현재 scaleAspectFit이 안됨
+        self.backgroundImageView.contentMode = .scaleAspectFit
 
         dataSource.requestBackgroundImage { [weak self] image in
             DispatchQueue.main.async {
@@ -28,8 +29,6 @@ class TileImageContentView: UIView {
             }
         }
 
-        print(tileImageView)
-        print(backgroundImageView)
         self.addSubview(tileImageView)
         self.addSubview(backgroundImageView)
     }
@@ -38,4 +37,3 @@ class TileImageContentView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
