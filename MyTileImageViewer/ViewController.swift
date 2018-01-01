@@ -32,9 +32,7 @@ class ViewController: UIViewController {
         tileImageScrollView.set(dataSource: dataSource!)
 
         dataSource?.requestBackgroundImage { (image) in
-            if let image = image {
-                print(image)
-            }
+
         }
     }
 }

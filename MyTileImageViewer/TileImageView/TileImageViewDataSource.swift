@@ -16,9 +16,9 @@ public protocol TileImageViewDataSource: class {
     // Tile size
     var tileSize: CGSize { get set }
 
-    // Tile Zoom Level
-    var minTileLevel: Int { get set }
-    var maxTileLevel: Int { get set }
+    // Default Zoom Level is Scale Aspect Fit Size.
+    // MaxZoomLevel allow you to zoom in image to its level.
+    var maxZoomLevel: CGFloat? { get set }
 
     var backgroundImageURL: URL { get set }
     var backgroundImage: UIImage { get set }
@@ -29,4 +29,7 @@ public protocol TileImageViewDataSource: class {
 
 extension TileImageViewDataSource {
 
+    var contentSize: CGSize {
+        return self.imageSize
+    }
 }

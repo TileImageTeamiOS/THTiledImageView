@@ -20,8 +20,7 @@ class TileImageContentView: UIView {
         self.backgroundImageView = UIImageView(frame: tileImageView.bounds)
         super.init(frame: tileImageView.frame)
 
-        // TODO: 현재 scaleAspectFit이 안됨
-        self.backgroundImageView.contentMode = .scaleAspectFit
+        backgroundImageView.contentMode = .scaleAspectFit
 
         dataSource.requestBackgroundImage { [weak self] image in
             DispatchQueue.main.async {
@@ -29,8 +28,8 @@ class TileImageContentView: UIView {
             }
         }
 
-        self.addSubview(tileImageView)
         self.addSubview(backgroundImageView)
+        self.addSubview(tileImageView)
     }
 
     required init?(coder aDecoder: NSCoder) {

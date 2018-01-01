@@ -13,8 +13,7 @@ class MyTileImageViewDataSource: TileImageViewDataSource {
     var imageSize: CGSize
     var tileSize: CGSize
 
-    var minTileLevel: Int = 0
-    var maxTileLevel: Int = 0
+    var maxZoomLevel: CGFloat?
 
     var backgroundImageURL: URL
     var backgroundImage: UIImage
@@ -27,18 +26,15 @@ class MyTileImageViewDataSource: TileImageViewDataSource {
     }
 
     func requestBackgroundImage(completion: @escaping (UIImage?) -> Void) {
-        let session = URLSession(configuration: .default)
-        let request = URLRequest(url: backgroundImageURL)
 
         if backgroundImageURL.absoluteString.contains("https") {
+            // Server
+            let session = URLSession(configuration: .default)
+            let request = URLRequest(url: backgroundImageURL)
+
             let dataTask = session.dataTask(with: request) { data, response, error in
-                guard error == nil else {
-                    print("Error occur: \(String(describing: error))")
-                    return
-                }
-                guard let response = response as? HTTPURLResponse else {
-                    return
-                }
+                guard error == nil else { return }
+                guard let response = response as? HTTPURLResponse else { return }
 
                 switch response.statusCode {
                 case 200:
@@ -52,6 +48,7 @@ class MyTileImageViewDataSource: TileImageViewDataSource {
             }
             dataTask.resume()
         } else {
+            // Local
             self.backgroundImage = UIImage(contentsOfFile: backgroundImageURL.path)!
             completion(self.backgroundImage)
         }
