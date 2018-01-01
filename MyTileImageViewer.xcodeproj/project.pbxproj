@@ -10,6 +10,7 @@
 		7E0C4F9B1FF7357D00778CED /* TileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9A1FF7357D00778CED /* TileImageView.swift */; };
 		7E0C4F9D1FF73CAB00778CED /* TileImageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9C1FF73CAB00778CED /* TileImageContentView.swift */; };
 		7E0C4F9F1FF73F5100778CED /* MyTileImageViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */; };
+		7E14368D1FFA08A20007BDA4 /* SenoraSabasaGarcia in Resources */ = {isa = PBXBuildFile; fileRef = 7E14368C1FFA08A20007BDA4 /* SenoraSabasaGarcia */; };
 		7EE82A4E1FF8E61300901157 /* bench.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EE82A4D1FF8E61300901157 /* bench.jpg */; };
 		7EF71CDC1FF4C13D001C3EF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF71CDB1FF4C13D001C3EF2 /* AppDelegate.swift */; };
 		7EF71CDE1FF4C13D001C3EF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF71CDD1FF4C13D001C3EF2 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 		7E0C4F9A1FF7357D00778CED /* TileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageView.swift; sourceTree = "<group>"; };
 		7E0C4F9C1FF73CAB00778CED /* TileImageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageContentView.swift; sourceTree = "<group>"; };
 		7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTileImageViewDataSource.swift; sourceTree = "<group>"; };
+		7E14368C1FFA08A20007BDA4 /* SenoraSabasaGarcia */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SenoraSabasaGarcia; sourceTree = "<group>"; };
 		7EE82A4D1FF8E61300901157 /* bench.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bench.jpg; sourceTree = "<group>"; };
 		7EF71CD81FF4C13D001C3EF2 /* MyTileImageViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTileImageViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF71CDB1FF4C13D001C3EF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		7EF71CDA1FF4C13D001C3EF2 /* MyTileImageViewer */ = {
 			isa = PBXGroup;
 			children = (
+				7E14368C1FFA08A20007BDA4 /* SenoraSabasaGarcia */,
 				7EE82A4D1FF8E61300901157 /* bench.jpg */,
 				7E0C4F971FF730A100778CED /* Supporting Files */,
 				7EF71CE71FF4C13D001C3EF2 /* Info.plist */,
@@ -161,6 +164,7 @@
 				7EE82A4E1FF8E61300901157 /* bench.jpg in Resources */,
 				7EF71CE61FF4C13D001C3EF2 /* LaunchScreen.storyboard in Resources */,
 				7EF71CE31FF4C13D001C3EF2 /* Assets.xcassets in Resources */,
+				7E14368D1FFA08A20007BDA4 /* SenoraSabasaGarcia in Resources */,
 				7EF71CE11FF4C13D001C3EF2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

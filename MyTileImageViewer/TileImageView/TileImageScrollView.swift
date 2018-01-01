@@ -18,6 +18,17 @@ public class TileImageScrollView: UIScrollView {
     weak var dataSource: TileImageViewDataSource?
     private var currentBounds = CGSize.zero
 
+    public override var contentSize: CGSize {
+        didSet {
+            contentSizeOrBoundsDidChange()
+        }
+    }
+    public override var bounds: CGRect {
+        didSet {
+            contentSizeOrBoundsDidChange()
+        }
+    }
+
     public func set(dataSource: TileImageViewDataSource) {
         delegate = self
 
@@ -35,7 +46,7 @@ public class TileImageScrollView: UIScrollView {
         self.contentSize = dataSource.contentSize
 
         setMaxMinZoomScalesForCurrentBounds()
-        setZoomScale(minimumZoomScale, animated: true)
+        setZoomScale(minimumZoomScale, animated: false)
     }
 
     // Set ZoomScale
@@ -71,7 +82,7 @@ extension TileImageScrollView: UIScrollViewDelegate {
     }
 
     public func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        contentSizeOrBoundsDidChange()
+
     }
 
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {

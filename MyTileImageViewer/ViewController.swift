@@ -19,7 +19,9 @@ class ViewController: UIViewController {
         let imageSize = CGSize(width: 5214, height: 7300)
         let tileSize = CGSize(width: 256, height: 256)
 
-        let imageURL = Bundle.main.url(forResource: "bench", withExtension: "jpg")!
+
+        let imageURL = Bundle.main.url(forResource: "large", withExtension: "jpg", subdirectory: "SenoraSabasaGarcia", localization: nil)!
+//        let imageURL = Bundle.main.url(forResource: "bench", withExtension: "jpg")!
 //        let imageURL = URL(string: "https://dl.dropbox.com/s/t1xwici6yuxplo0/bench.jpg")!
 
         setupExample(imageSize: imageSize, tileSize: tileSize, imageURL: imageURL)
