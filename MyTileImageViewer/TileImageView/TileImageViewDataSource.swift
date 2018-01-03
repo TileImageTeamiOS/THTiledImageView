@@ -20,6 +20,7 @@ public protocol TileImageViewDataSource: class {
     // MaxZoomLevel allow you to zoom in image to its level.
     var maxZoomLevel: CGFloat? { get set }
 
+    var imageName: String { get set }
     var backgroundImageURL: URL { get set }
     var backgroundImage: UIImage { get set }
 

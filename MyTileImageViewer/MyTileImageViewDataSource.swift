@@ -10,6 +10,7 @@ import UIKit
 
 class MyTileImageViewDataSource: TileImageViewDataSource {
 
+    var imageName: String = ""
     var imageSize: CGSize
     var tileSize: CGSize
 

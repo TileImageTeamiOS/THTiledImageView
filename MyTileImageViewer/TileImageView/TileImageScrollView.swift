@@ -49,14 +49,14 @@ public class TileImageScrollView: UIScrollView {
         setZoomScale(minimumZoomScale, animated: false)
     }
 
-    // Set ZoomScale
+    // Scale contentSize
     private func setMaxMinZoomScalesForCurrentBounds() {
         guard let dataSource = dataSource else {
             return
         }
-
         setNeedsLayout()
         layoutIfNeeded()
+
         let boundsSize = bounds.size
         let imageSize = dataSource.contentSize
 
@@ -95,8 +95,8 @@ extension TileImageScrollView: UIScrollViewDelegate {
             currentBounds = bounds.size
             setMaxMinZoomScalesForCurrentBounds()
         }
-        let topX = max(-(contentSize.width - bounds.width)/2, 0)
-        let topY = max(-(contentSize.height - bounds.height)/2, 0)
+        let topX = max((bounds.width - contentSize.width)/2, 0)
+        let topY = max((bounds.height - contentSize.height)/2, 0)
         contentView?.frame.origin = CGPoint(x: topX, y: topY)
     }
 }
