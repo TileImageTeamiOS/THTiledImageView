@@ -55,11 +55,12 @@ extension UIImage {
         if fileExists == false {
             var tileSize = size
             let defaultTileSize = tileSize.width
+            let scale = Float(UIScreen.main.scale)
 
             if let image = UIImage(named: "\(name).jpg") {
                 let imageRef = image.cgImage
-                let totalColumns = Int(ceilf(Float(image.size.width / tileSize.width)))
-                let totalRows = Int(ceilf(Float(image.size.height / tileSize.height)))
+                let totalColumns = Int(ceilf(Float(image.size.width / tileSize.width)) * scale)
+                let totalRows = Int(ceilf(Float(image.size.height / tileSize.height)) * scale)
                 let partialColumnWidth = Int(image.size.width.truncatingRemainder(dividingBy: tileSize.width))
                 let partialRowHeight = Int(image.size.height.truncatingRemainder(dividingBy: tileSize.height))
 
@@ -79,7 +80,8 @@ extension UIImage {
                             let yOffset = CGFloat(y) * defaultTileSize
                             let point = CGPoint(x: xOffset, y: yOffset)
 
-                            if let tileImageRef = imageRef?.cropping(to: CGRect(origin: point, size: tileSize)), let imageData = UIImagePNGRepresentation(UIImage(cgImage: tileImageRef)) {
+                            if let tileImageRef = imageRef?.cropping(to: CGRect(origin: point, size: tileSize)),
+                                let imageData = UIImagePNGRepresentation(UIImage(cgImage: tileImageRef)) {
                                 let path = "\(cachesPath)/\(name)_\(x)_\(y).png"
                                 try? imageData.write(to: URL(fileURLWithPath: path), options: [])
                             }

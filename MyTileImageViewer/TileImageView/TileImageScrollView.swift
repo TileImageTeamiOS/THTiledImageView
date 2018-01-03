@@ -12,17 +12,24 @@ protocol TileImageScrollViewDelegate: class {
     func scrollViewDidZoom(scrollView: TileImageScrollView)
 }
 
+@objc protocol DoubleTappable {
+    var doubleTap: UITapGestureRecognizer! { get set }
+    @objc func didDoubleTapped(_ gestureRecognizer: UIGestureRecognizer)
+}
+
 public class TileImageScrollView: UIScrollView {
 
     private var contentView: TileImageContentView?
     weak var dataSource: TileImageViewDataSource?
     private var currentBounds = CGSize.zero
+    public internal(set) var doubleTap: UITapGestureRecognizer!
 
     public override var contentSize: CGSize {
         didSet {
             contentSizeOrBoundsDidChange()
         }
     }
+
     public override var bounds: CGRect {
         didSet {
             contentSizeOrBoundsDidChange()
@@ -31,6 +38,10 @@ public class TileImageScrollView: UIScrollView {
 
     public func set(dataSource: TileImageViewDataSource) {
         delegate = self
+
+        doubleTap = UITapGestureRecognizer(target: self, action: #selector(TileImageScrollView.didDoubleTapped(_:)))
+        doubleTap.numberOfTapsRequired = 2
+        addGestureRecognizer(doubleTap)
 
         self.dataSource = dataSource
 
@@ -98,5 +109,27 @@ extension TileImageScrollView: UIScrollViewDelegate {
         let topX = max((bounds.width - contentSize.width)/2, 0)
         let topY = max((bounds.height - contentSize.height)/2, 0)
         contentView?.frame.origin = CGPoint(x: topX, y: topY)
+    }
+}
+
+extension TileImageScrollView: DoubleTappable {
+
+    @objc func didDoubleTapped(_ gestureRecognizer: UIGestureRecognizer) {
+        if zoomScale >= maximumZoomScale {
+            setZoomScale(minimumZoomScale, animated: true)
+        } else {
+            let tapCenter = gestureRecognizer.location(in: contentView)
+            let newScale = min(zoomScale * 2, maximumZoomScale)
+            let maxZoomRect = rect(around: tapCenter, atZoomScale: newScale)
+            zoom(to: maxZoomRect, animated: true)
+        }
+    }
+
+    private func rect(around point: CGPoint, atZoomScale zoomScale: CGFloat) -> CGRect {
+        let boundsSize = bounds.size
+        let scaledBoundsSize = CGSize(width: boundsSize.width / zoomScale, height: boundsSize.height / zoomScale)
+        let point = CGRect(x: point.x - scaledBoundsSize.width / 2, y: point.y - scaledBoundsSize.height / 2,
+                           width: scaledBoundsSize.width, height: scaledBoundsSize.height)
+        return point
     }
 }
