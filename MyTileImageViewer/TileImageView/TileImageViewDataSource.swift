@@ -13,8 +13,10 @@ public protocol TileImageViewDataSource: class {
     // full Image size
     var imageSize: CGSize { get set }
 
-    // Tile size
-    var tileSize: CGSize { get set }
+    // TileLayer
+    var tileSize: [CGSize] { get set }
+    var minTileLevel: Int { get set }
+    var maxTileLevel: Int { get set }
 
     // Default Zoom Level is Scale Aspect Fit Size.
     // MaxZoomLevel allow you to zoom in image to its level.
@@ -26,6 +28,7 @@ public protocol TileImageViewDataSource: class {
 
     // Set BackgroundImage From URL
     func requestBackgroundImage(completion: @escaping (UIImage?) -> Void)
+
 }
 
 extension TileImageViewDataSource {

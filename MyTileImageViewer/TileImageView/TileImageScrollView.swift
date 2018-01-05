@@ -8,29 +8,25 @@
 
 import UIKit
 
-protocol TileImageScrollViewDelegate: class {
-    func scrollViewDidZoom(scrollView: TileImageScrollView)
-}
-
-@objc protocol DoubleTappable {
+@objc internal protocol DoubleTappable {
     var doubleTap: UITapGestureRecognizer! { get set }
     @objc func didDoubleTapped(_ gestureRecognizer: UIGestureRecognizer)
 }
 
-public class TileImageScrollView: UIScrollView {
+open class TileImageScrollView: UIScrollView {
 
     private var contentView: TileImageContentView?
     weak var dataSource: TileImageViewDataSource?
     private var currentBounds = CGSize.zero
     public internal(set) var doubleTap: UITapGestureRecognizer!
 
-    public override var contentSize: CGSize {
+    open override var contentSize: CGSize {
         didSet {
             contentSizeOrBoundsDidChange()
         }
     }
 
-    public override var bounds: CGRect {
+    open override var bounds: CGRect {
         didSet {
             contentSizeOrBoundsDidChange()
         }
@@ -45,7 +41,8 @@ public class TileImageScrollView: UIScrollView {
 
         self.dataSource = dataSource
 
-        let tileImageView = TileImageView(imageSize: dataSource.imageSize)
+        let tileImageView = TileImageView(dataSource: dataSource)
+        
         tileImageView.dataSource = dataSource
 
         contentView = TileImageContentView(tileImageView: tileImageView, dataSource: dataSource)
@@ -87,17 +84,10 @@ public class TileImageScrollView: UIScrollView {
     }
 }
 
+// MARK: UIScrollViewDelegate
 extension TileImageScrollView: UIScrollViewDelegate {
     public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return contentView
-    }
-
-    public func scrollViewDidZoom(_ scrollView: UIScrollView) {
-
-    }
-
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-
     }
 
     // Set content TopX and TopY for contentView
@@ -112,6 +102,7 @@ extension TileImageScrollView: UIScrollViewDelegate {
     }
 }
 
+// MARK: DoubleTappable
 extension TileImageScrollView: DoubleTappable {
 
     @objc func didDoubleTapped(_ gestureRecognizer: UIGestureRecognizer) {

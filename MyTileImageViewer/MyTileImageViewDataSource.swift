@@ -10,20 +10,26 @@ import UIKit
 
 class MyTileImageViewDataSource: TileImageViewDataSource {
 
+    var minTileLevel: Int
+    var maxTileLevel: Int
+
+    var tileSize: [CGSize]
+
     var imageName: String = ""
     var imageSize: CGSize
-    var tileSize: CGSize
 
     var maxZoomLevel: CGFloat?
 
     var backgroundImageURL: URL
     var backgroundImage: UIImage
 
-    init(imageSize: CGSize, tileSize: CGSize, imageURL: URL) {
+    init(imageSize: CGSize, tileSize: [CGSize], imageURL: URL) {
         self.imageSize = imageSize
         self.tileSize = tileSize
         self.backgroundImageURL = imageURL
         self.backgroundImage = UIImage()
+        self.maxTileLevel = tileSize.count
+        self.minTileLevel = 1
     }
 
     func requestBackgroundImage(completion: @escaping (UIImage?) -> Void) {
