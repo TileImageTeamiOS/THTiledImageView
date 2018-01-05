@@ -42,7 +42,6 @@ open class TileImageScrollView: UIScrollView {
         self.dataSource = dataSource
 
         let tileImageView = TileImageView(dataSource: dataSource)
-        
         tileImageView.dataSource = dataSource
 
         contentView = TileImageContentView(tileImageView: tileImageView, dataSource: dataSource)

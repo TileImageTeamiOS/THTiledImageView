@@ -11,7 +11,7 @@ import UIKit
 public protocol TileImageViewDataSource: class {
 
     // full Image size
-    var imageSize: CGSize { get set }
+    var originalImageSize: CGSize { get set }
 
     // TileLayer
     var tileSize: [CGSize] { get set }
@@ -22,9 +22,14 @@ public protocol TileImageViewDataSource: class {
     // MaxZoomLevel allow you to zoom in image to its level.
     var maxZoomLevel: CGFloat? { get set }
 
-    var imageName: String { get set }
-    var backgroundImageURL: URL { get set }
-    var backgroundImage: UIImage { get set }
+    // ThumbNail Image Name
+    // This will be used as a thumbnail of image
+    // You need to set thumbnail image ratio same as original image
+    var thumbnailImageName: String { get set }
+
+    // Image Info
+    var imageURL: URL { get set }
+    var image: UIImage { get set }
 
     // Set BackgroundImage From URL
     func requestBackgroundImage(completion: @escaping (UIImage?) -> Void)
@@ -34,6 +39,6 @@ public protocol TileImageViewDataSource: class {
 extension TileImageViewDataSource {
 
     var contentSize: CGSize {
-        return self.imageSize
+        return self.originalImageSize
     }
 }

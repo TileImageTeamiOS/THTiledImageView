@@ -36,7 +36,7 @@ internal class TileImageView: UIView {
     }
 
     convenience init(dataSource: TileImageViewDataSource) {
-        self.init(frame: CGRect(origin: CGPoint.zero, size: dataSource.imageSize))
+        self.init(frame: CGRect(origin: CGPoint.zero, size: dataSource.originalImageSize))
 
         guard let layer = self.layer as? TiledLayer else { return }
 
@@ -51,7 +51,7 @@ internal class TileImageView: UIView {
         let tileSize = dataSource.tileSize
         layer.tileSize = tileSize[0]
 
-        frame = CGRect(origin: CGPoint.zero, size: dataSource.imageSize)
+        frame = CGRect(origin: CGPoint.zero, size: dataSource.originalImageSize)
     }
 
     override func draw(_ rect: CGRect) {
@@ -98,7 +98,10 @@ internal class TileImageView: UIView {
 
     private func imageForTileAtColumn(_ column: Int, row: Int, level: Int) -> UIImage? {
         let size = Int(dataSource!.tileSize[level - 1].width)
-        let filePath = "\(cachesPath)/\(dataSource!.imageName)/\(size)/\(dataSource!.imageName)_\(size)_\(level)_\(column)_\(row)"
+        let filePath = "\(cachesPath)/" +
+                       "\(dataSource!.thumbnailImageName)/\(size)/" +
+                       "\(dataSource!.thumbnailImageName)_\(size)_\(level)_\(column)_\(row)"
+
         return UIImage(contentsOfFile: filePath)
     }
 }

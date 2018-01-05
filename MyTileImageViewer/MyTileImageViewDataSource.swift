@@ -15,29 +15,28 @@ class MyTileImageViewDataSource: TileImageViewDataSource {
 
     var tileSize: [CGSize]
 
-    var imageName: String = ""
-    var imageSize: CGSize
+    var thumbnailImageName: String = ""
+    var originalImageSize: CGSize
 
     var maxZoomLevel: CGFloat?
-
-    var backgroundImageURL: URL
-    var backgroundImage: UIImage
+    var imageURL: URL
+    var image: UIImage
 
     init(imageSize: CGSize, tileSize: [CGSize], imageURL: URL) {
-        self.imageSize = imageSize
+        self.originalImageSize = imageSize
         self.tileSize = tileSize
-        self.backgroundImageURL = imageURL
-        self.backgroundImage = UIImage()
+        self.imageURL = imageURL
+        self.image = UIImage()
         self.maxTileLevel = tileSize.count
         self.minTileLevel = 1
     }
 
     func requestBackgroundImage(completion: @escaping (UIImage?) -> Void) {
 
-        if backgroundImageURL.absoluteString.contains("https") {
+        if imageURL.absoluteString.contains("https") {
             // Server
             let session = URLSession(configuration: .default)
-            let request = URLRequest(url: backgroundImageURL)
+            let request = URLRequest(url: imageURL)
 
             let dataTask = session.dataTask(with: request) { data, response, error in
                 guard error == nil else { return }
@@ -46,8 +45,8 @@ class MyTileImageViewDataSource: TileImageViewDataSource {
                 switch response.statusCode {
                 case 200:
                     if let data = data, let image = UIImage(data: data) {
-                        self.backgroundImage = image
-                        completion(self.backgroundImage)
+                        self.image = image
+                        completion(self.image)
                     }
                 default:
                     completion(nil)
@@ -56,8 +55,8 @@ class MyTileImageViewDataSource: TileImageViewDataSource {
             dataTask.resume()
         } else {
             // Local
-            self.backgroundImage = UIImage(contentsOfFile: backgroundImageURL.path)!
-            completion(self.backgroundImage)
+            self.image = UIImage(contentsOfFile: imageURL.path)!
+            completion(self.image)
         }
 
     }
