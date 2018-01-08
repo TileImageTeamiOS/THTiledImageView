@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal class TileImageContentView: UIView {
+class TileImageContentView: UIView {
 
     let tileImageView: TileImageView
     let backgroundImageView: UIImageView

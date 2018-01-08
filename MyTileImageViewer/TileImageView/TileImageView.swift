@@ -21,7 +21,7 @@ class TiledLayer: CATiledLayer {
     }
 }
 
-internal class TileImageView: UIView {
+class TileImageView: UIView {
 
     let cachesPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0] as String
 

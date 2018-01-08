@@ -6,11 +6,10 @@
 //  Copyright © 2018년 홍창남. All rights reserved.
 //
 
-
 import UIKit
 
 extension FileManager {
-    static func createContainerDirectory(path: String) {
+    internal static func createContainerDirectory(path: String) {
 
         if !FileManager.default.fileExists(atPath: path) {
             do {
@@ -25,7 +24,7 @@ extension FileManager {
 }
 
 extension UIImage {
-    class func saveTileOf(size: [CGSize], name: String, withExtension: String) {
+    public class func saveTileOf(size: [CGSize], name: String, withExtension: String) {
 
         let cachesPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0] as String
 
@@ -106,7 +105,7 @@ extension UIImage {
         }
     }
 
-    static func generateImage(tileImageRef: CGImage, path: String, withExtension: String) {
+    private static func generateImage(tileImageRef: CGImage, path: String, withExtension: String) {
         switch withExtension {
         case "jpg":
             if let imageData = UIImageJPEGRepresentation(UIImage(cgImage: tileImageRef), 1) {

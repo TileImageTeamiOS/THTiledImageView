@@ -60,4 +60,3 @@ class ViewController: UIViewController {
 //        let imageURL = URL(string: "https://dl.dropbox.com/s/t1xwici6yuxplo0/bench.jpg")!
     }
 }
-
