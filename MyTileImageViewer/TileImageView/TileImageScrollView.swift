@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc internal protocol DoubleTappable {
+@objc protocol DoubleTappable {
     var doubleTap: UITapGestureRecognizer! { get set }
     @objc func didDoubleTapped(_ gestureRecognizer: UIGestureRecognizer)
 }
