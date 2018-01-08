@@ -21,6 +21,7 @@ class MyTileImageViewDataSource: TileImageViewDataSource {
     var maxZoomLevel: CGFloat?
     var imageURL: URL
     var image: UIImage
+    var imageExtension: String
 
     init(imageSize: CGSize, tileSize: [CGSize], imageURL: URL) {
         self.originalImageSize = imageSize
@@ -29,11 +30,12 @@ class MyTileImageViewDataSource: TileImageViewDataSource {
         self.image = UIImage()
         self.maxTileLevel = tileSize.count
         self.minTileLevel = 1
+        self.imageExtension = "jpg"
     }
 
     func requestBackgroundImage(completion: @escaping (UIImage?) -> Void) {
 
-        if imageURL.absoluteString.contains("https") {
+        if imageURL.absoluteString.hasPrefix("https") {
             // Server
             let session = URLSession(configuration: .default)
             let request = URLRequest(url: imageURL)

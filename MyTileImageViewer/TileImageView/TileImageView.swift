@@ -85,7 +85,7 @@ internal class TileImageView: UIView {
 
                     var tileRect = CGRect(origin: point, size: size[level - 1])
 
-                    tileRect = bounds.intersection(tileRect)
+                    tileRect = self.bounds.intersection(tileRect)
                     tile.draw(in: tileRect)
                 }
             }
@@ -100,7 +100,8 @@ internal class TileImageView: UIView {
         let size = Int(dataSource!.tileSize[level - 1].width)
         let filePath = "\(cachesPath)/" +
                        "\(dataSource!.thumbnailImageName)/\(size)/" +
-                       "\(dataSource!.thumbnailImageName)_\(size)_\(level)_\(column)_\(row)"
+                       "\(dataSource!.thumbnailImageName)_\(size)_" +
+                       "\(level)_\(column)_\(row).\(dataSource!.imageExtension)"
 
         return UIImage(contentsOfFile: filePath)
     }

@@ -30,6 +30,7 @@ public protocol TileImageViewDataSource: class {
     // Image Info
     var imageURL: URL { get set }
     var image: UIImage { get set }
+    var imageExtension: String { get set }
 
     // Set BackgroundImage From URL
     func requestBackgroundImage(completion: @escaping (UIImage?) -> Void)
