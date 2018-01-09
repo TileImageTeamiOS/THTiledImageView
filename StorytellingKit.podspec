@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'StorytellingKit'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'High Quality Image ScrollView with storytelling contents.'
 
   s.description      = <<-DESC

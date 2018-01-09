@@ -8,7 +8,14 @@
 
 import UIKit
 
+public protocol TileImageScrollViewDelegate {
+    func didScroll(scrollView: TileImageScrollView)
+    func didZoom(scrollView: TileImageScrollView)
+}
+
 public protocol TileImageViewDataSource: class {
+
+    var delegate: TileImageScrollViewDelegate? { get set }
 
     // full Image size
     var originalImageSize: CGSize { get set }
@@ -43,3 +50,4 @@ extension TileImageViewDataSource {
         return self.originalImageSize
     }
 }
+

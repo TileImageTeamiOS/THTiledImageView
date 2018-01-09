@@ -15,6 +15,8 @@ import UIKit
 
 open class TileImageScrollView: UIScrollView {
 
+    var tileImageScrollViewDelegate: TileImageScrollViewDelegate?
+
     private var contentView: TileImageContentView?
     weak var dataSource: TileImageViewDataSource?
     private var currentBounds = CGSize.zero
@@ -40,6 +42,8 @@ open class TileImageScrollView: UIScrollView {
         addGestureRecognizer(doubleTap)
 
         self.dataSource = dataSource
+
+        self.tileImageScrollViewDelegate = dataSource.delegate
 
         let tileImageView = TileImageView(dataSource: dataSource)
         tileImageView.dataSource = dataSource
@@ -99,6 +103,15 @@ extension TileImageScrollView: UIScrollViewDelegate {
         let topY = max((bounds.height - contentSize.height)/2, 0)
         contentView?.frame.origin = CGPoint(x: topX, y: topY)
     }
+
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        tileImageScrollViewDelegate?.didScroll(scrollView: self)
+    }
+
+    public func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        tileImageScrollViewDelegate?.didZoom(scrollView: self)
+    }
+
 }
 
 // MARK: DoubleTappable
