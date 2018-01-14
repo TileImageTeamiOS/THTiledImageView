@@ -1,6 +1,6 @@
 //
-//  TileImageScrollView.swift
-//  THTiledImageView
+//  THTiledImageScrollView.swift
+//  THTiledImageScrollView
 //
 //  Created by 홍창남 on 2017. 12. 28..
 //  Copyright © 2017년 홍창남. All rights reserved.
@@ -17,7 +17,7 @@ open class THTiledImageScrollView: UIScrollView {
 
     weak var tileImageScrollViewDelegate: THTiledImageScrollViewDelegate?
 
-    private var contentView: TileImageContentView?
+    private var contentView: THTiledImageContentView?
     weak var dataSource: THTiledImageViewDataSource?
     private var currentBounds: CGSize = .zero
     public internal(set) var doubleTap: UITapGestureRecognizer!
@@ -36,7 +36,7 @@ open class THTiledImageScrollView: UIScrollView {
         let tileImageView = THTiledImageView(dataSource: dataSource)
         tileImageView.dataSource = dataSource
 
-        contentView = TileImageContentView(tileImageView: tileImageView, dataSource: dataSource)
+        contentView = THTiledImageContentView(tileImageView: tileImageView, dataSource: dataSource)
         if let contentView = contentView {
             self.addSubview(contentView)
         }

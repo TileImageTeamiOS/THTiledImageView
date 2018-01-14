@@ -64,7 +64,8 @@ We offer you image cutting function(`UIImage.saveTileOf(size:name:withExtension:
 
 ```
 // size and level will be 512-1, 256-2, 128-3(size-level).
-let tiles: [CGSize] = [CGSize(width: 512, height: 512), CGSize(width: 256, height: 256), CGSize(width: 128, height: 128)]
+let tiles: [CGSize] = [CGSize(width: 512, height: 512),
+                       CGSize(width: 256, height: 256), CGSize(width: 128, height: 128)]
 
 // static function
 UIImage.saveTileOf(size: tiles, name: "bench", withExtension: "jpg")

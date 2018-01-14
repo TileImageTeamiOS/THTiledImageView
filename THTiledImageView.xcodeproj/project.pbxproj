@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E0C4F9B1FF7357D00778CED /* TileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9A1FF7357D00778CED /* TileImageView.swift */; };
-		7E0C4F9D1FF73CAB00778CED /* TileImageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9C1FF73CAB00778CED /* TileImageContentView.swift */; };
+		7E0C4F9B1FF7357D00778CED /* THTileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9A1FF7357D00778CED /* THTileImageView.swift */; };
+		7E0C4F9D1FF73CAB00778CED /* THTiledImageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9C1FF73CAB00778CED /* THTiledImageContentView.swift */; };
 		7E0C4F9F1FF73F5100778CED /* MyTileImageViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */; };
-		7E95FEC6200361E200580A13 /* TileImageGenerateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E95FEC5200361E200580A13 /* TileImageGenerateHelper.swift */; };
+		7E95FEC6200361E200580A13 /* THTiledImageGenerateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E95FEC5200361E200580A13 /* THTiledImageGenerateHelper.swift */; };
 		7EC640801FFC994400B1D7F1 /* windingRoad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EC6407F1FFC994400B1D7F1 /* windingRoad.jpg */; };
 		7EC640841FFCB2AB00B1D7F1 /* smallBench.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EC640831FFCB2AB00B1D7F1 /* smallBench.jpg */; };
 		7EE82A4E1FF8E61300901157 /* bench.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EE82A4D1FF8E61300901157 /* bench.jpg */; };
@@ -20,15 +20,15 @@
 		7EF71CE11FF4C13D001C3EF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EF71CDF1FF4C13D001C3EF2 /* Main.storyboard */; };
 		7EF71CE31FF4C13D001C3EF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EF71CE21FF4C13D001C3EF2 /* Assets.xcassets */; };
 		7EF71CE61FF4C13D001C3EF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EF71CE41FF4C13D001C3EF2 /* LaunchScreen.storyboard */; };
-		7EF71CEF1FF4C58B001C3EF2 /* TileImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF71CEE1FF4C58B001C3EF2 /* TileImageScrollView.swift */; };
-		7EF71CF11FF4C612001C3EF2 /* TileImageViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF71CF01FF4C612001C3EF2 /* TileImageViewDataSource.swift */; };
+		7EF71CEF1FF4C58B001C3EF2 /* THTiledImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF71CEE1FF4C58B001C3EF2 /* THTiledImageScrollView.swift */; };
+		7EF71CF11FF4C612001C3EF2 /* THTiledImageViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF71CF01FF4C612001C3EF2 /* THTiledImageViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7E0C4F9A1FF7357D00778CED /* TileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageView.swift; sourceTree = "<group>"; };
-		7E0C4F9C1FF73CAB00778CED /* TileImageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageContentView.swift; sourceTree = "<group>"; };
+		7E0C4F9A1FF7357D00778CED /* THTileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTileImageView.swift; sourceTree = "<group>"; };
+		7E0C4F9C1FF73CAB00778CED /* THTiledImageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTiledImageContentView.swift; sourceTree = "<group>"; };
 		7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTileImageViewDataSource.swift; sourceTree = "<group>"; };
-		7E95FEC5200361E200580A13 /* TileImageGenerateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageGenerateHelper.swift; sourceTree = "<group>"; };
+		7E95FEC5200361E200580A13 /* THTiledImageGenerateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTiledImageGenerateHelper.swift; sourceTree = "<group>"; };
 		7E95FEC72003638100580A13 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7EC6407F1FFC994400B1D7F1 /* windingRoad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = windingRoad.jpg; sourceTree = "<group>"; };
 		7EC640831FFCB2AB00B1D7F1 /* smallBench.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = smallBench.jpg; sourceTree = "<group>"; };
@@ -41,8 +41,8 @@
 		7EF71CE21FF4C13D001C3EF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EF71CE51FF4C13D001C3EF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7EF71CE71FF4C13D001C3EF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7EF71CEE1FF4C58B001C3EF2 /* TileImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageScrollView.swift; sourceTree = "<group>"; };
-		7EF71CF01FF4C612001C3EF2 /* TileImageViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageViewDataSource.swift; sourceTree = "<group>"; };
+		7EF71CEE1FF4C58B001C3EF2 /* THTiledImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTiledImageScrollView.swift; sourceTree = "<group>"; };
+		7EF71CF01FF4C612001C3EF2 /* THTiledImageViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTiledImageViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +103,11 @@
 		7EF71CF21FF4C90C001C3EF2 /* THTiledImageView */ = {
 			isa = PBXGroup;
 			children = (
-				7EF71CEE1FF4C58B001C3EF2 /* TileImageScrollView.swift */,
-				7EF71CF01FF4C612001C3EF2 /* TileImageViewDataSource.swift */,
-				7E0C4F9A1FF7357D00778CED /* TileImageView.swift */,
-				7E0C4F9C1FF73CAB00778CED /* TileImageContentView.swift */,
-				7E95FEC5200361E200580A13 /* TileImageGenerateHelper.swift */,
+				7EF71CEE1FF4C58B001C3EF2 /* THTiledImageScrollView.swift */,
+				7EF71CF01FF4C612001C3EF2 /* THTiledImageViewDataSource.swift */,
+				7E0C4F9A1FF7357D00778CED /* THTileImageView.swift */,
+				7E0C4F9C1FF73CAB00778CED /* THTiledImageContentView.swift */,
+				7E95FEC5200361E200580A13 /* THTiledImageGenerateHelper.swift */,
 			);
 			path = THTiledImageView;
 			sourceTree = "<group>";
@@ -205,13 +205,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EF71CF11FF4C612001C3EF2 /* TileImageViewDataSource.swift in Sources */,
+				7EF71CF11FF4C612001C3EF2 /* THTiledImageViewDataSource.swift in Sources */,
 				7E0C4F9F1FF73F5100778CED /* MyTileImageViewDataSource.swift in Sources */,
-				7EF71CEF1FF4C58B001C3EF2 /* TileImageScrollView.swift in Sources */,
-				7E0C4F9D1FF73CAB00778CED /* TileImageContentView.swift in Sources */,
-				7E95FEC6200361E200580A13 /* TileImageGenerateHelper.swift in Sources */,
+				7EF71CEF1FF4C58B001C3EF2 /* THTiledImageScrollView.swift in Sources */,
+				7E0C4F9D1FF73CAB00778CED /* THTiledImageContentView.swift in Sources */,
+				7E95FEC6200361E200580A13 /* THTiledImageGenerateHelper.swift in Sources */,
 				7EF71CDE1FF4C13D001C3EF2 /* ViewController.swift in Sources */,
-				7E0C4F9B1FF7357D00778CED /* TileImageView.swift in Sources */,
+				7E0C4F9B1FF7357D00778CED /* THTileImageView.swift in Sources */,
 				7EF71CDC1FF4C13D001C3EF2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

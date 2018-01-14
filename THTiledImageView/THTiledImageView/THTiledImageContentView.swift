@@ -1,6 +1,6 @@
 //
-//  TileImageContentView.swift
-//  THTiledImageView
+//  THTiledImageContentView.swift
+//  THTiledImageContentView
 //
 //  Created by 홍창남 on 2017. 12. 30..
 //  Copyright © 2017년 홍창남. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TileImageContentView: UIView {
+class THTiledImageContentView: UIView {
 
     let tileImageView: THTiledImageView
     let backgroundImageView: UIImageView
