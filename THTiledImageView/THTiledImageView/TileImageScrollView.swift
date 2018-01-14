@@ -1,6 +1,6 @@
 //
 //  TileImageScrollView.swift
-//  MyTileImageViewer
+//  THTiledImageView
 //
 //  Created by 홍창남 on 2017. 12. 28..
 //  Copyright © 2017년 홍창남. All rights reserved.
@@ -13,31 +13,19 @@ import UIKit
     @objc func didDoubleTapped(_ gestureRecognizer: UIGestureRecognizer)
 }
 
-open class TileImageScrollView: UIScrollView {
+open class THTiledImageScrollView: UIScrollView {
 
-    var tileImageScrollViewDelegate: TileImageScrollViewDelegate?
+    weak var tileImageScrollViewDelegate: THTiledImageScrollViewDelegate?
 
     private var contentView: TileImageContentView?
-    weak var dataSource: TileImageViewDataSource?
-    private var currentBounds = CGSize.zero
+    weak var dataSource: THTiledImageViewDataSource?
+    private var currentBounds: CGSize = .zero
     public internal(set) var doubleTap: UITapGestureRecognizer!
 
-    open override var contentSize: CGSize {
-        didSet {
-            contentSizeOrBoundsDidChange()
-        }
-    }
-
-    open override var bounds: CGRect {
-        didSet {
-            contentSizeOrBoundsDidChange()
-        }
-    }
-
-    public func set(dataSource: TileImageViewDataSource) {
+    public func set(dataSource: THTiledImageViewDataSource) {
         delegate = self
 
-        doubleTap = UITapGestureRecognizer(target: self, action: #selector(TileImageScrollView.didDoubleTapped(_:)))
+        doubleTap = UITapGestureRecognizer(target: self, action: #selector(THTiledImageScrollView.didDoubleTapped(_:)))
         doubleTap.numberOfTapsRequired = 2
         addGestureRecognizer(doubleTap)
 
@@ -45,7 +33,7 @@ open class TileImageScrollView: UIScrollView {
 
         self.tileImageScrollViewDelegate = dataSource.delegate
 
-        let tileImageView = TileImageView(dataSource: dataSource)
+        let tileImageView = THTiledImageView(dataSource: dataSource)
         tileImageView.dataSource = dataSource
 
         contentView = TileImageContentView(tileImageView: tileImageView, dataSource: dataSource)
@@ -58,6 +46,39 @@ open class TileImageScrollView: UIScrollView {
 
         setMaxMinZoomScalesForCurrentBounds()
         setZoomScale(minimumZoomScale, animated: false)
+
+        setContentInset()
+    }
+
+    // MARK: Set content TopX and TopY for contentView
+    private func setContentInset() {
+        let horizontalSpace = max(-(contentSize.width - bounds.width)/2, 0)
+        let verticalSpace = max(-(contentSize.height - bounds.height)/2, 0)
+
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+
+        self.contentInset = UIEdgeInsets(top: verticalSpace - (statusBarHeight / 2), left: horizontalSpace,
+                                         bottom: verticalSpace - (statusBarHeight / 2), right: horizontalSpace)
+
+        if UIDevice.current.isiPhoneX {
+            contentInset.top -= 17
+            contentInset.bottom -= 17
+        }
+
+        if bounds.origin.y != 0 {
+            bounds.origin.y = 0
+        }
+
+        if bounds.origin.x != 0 {
+            bounds.origin.x = 0
+        }
+
+        if let viewController = self.superview?.getParentViewController() {
+            if let navHeight = viewController.navigationController?.navigationBar.frame.height {
+                contentInset.top -= navHeight / 2
+                contentInset.bottom -= navHeight / 2
+            }
+        }
     }
 
     // Scale contentSize
@@ -88,20 +109,9 @@ open class TileImageScrollView: UIScrollView {
 }
 
 // MARK: UIScrollViewDelegate
-extension TileImageScrollView: UIScrollViewDelegate {
+extension THTiledImageScrollView: UIScrollViewDelegate {
     public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return contentView
-    }
-
-    // Set content TopX and TopY for contentView
-    private func contentSizeOrBoundsDidChange() {
-        if currentBounds != bounds.size {
-            currentBounds = bounds.size
-            setMaxMinZoomScalesForCurrentBounds()
-        }
-        let topX = max((bounds.width - contentSize.width)/2, 0)
-        let topY = max((bounds.height - contentSize.height)/2, 0)
-        contentView?.frame.origin = CGPoint(x: topX, y: topY)
     }
 
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -115,7 +125,7 @@ extension TileImageScrollView: UIScrollViewDelegate {
 }
 
 // MARK: DoubleTappable
-extension TileImageScrollView: DoubleTappable {
+extension THTiledImageScrollView: DoubleTappable {
 
     @objc func didDoubleTapped(_ gestureRecognizer: UIGestureRecognizer) {
         if zoomScale >= maximumZoomScale {
@@ -134,5 +144,32 @@ extension TileImageScrollView: DoubleTappable {
         let point = CGRect(x: point.x - scaledBoundsSize.width / 2, y: point.y - scaledBoundsSize.height / 2,
                            width: scaledBoundsSize.width, height: scaledBoundsSize.height)
         return point
+    }
+}
+
+// MARK: For Positioning ContentView to Center in ScrollView
+extension UIResponder {
+    func getParentViewController() -> UIViewController? {
+        if self.next is UIViewController {
+            return self.next as? UIViewController
+        } else {
+            if let n = self.next {
+                return n.getParentViewController()
+            } else {
+                return nil
+            }
+        }
+    }
+}
+
+// MARK: For iPhoneX Detection
+extension UIDevice {
+    var isiPhoneX: Bool {
+        if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.phone &&
+            (UIScreen.main.bounds.size.height == 812 &&
+              UIScreen.main.bounds.size.width == 375) {
+            return true
+        }
+        return false
     }
 }

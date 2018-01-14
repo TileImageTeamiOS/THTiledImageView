@@ -1,6 +1,6 @@
 //
-//  TileImageViewDataSource.swift
-//  MyTileImageViewer
+//  THTiledImageViewDataSource.swift
+//  THTiledImageView
 //
 //  Created by 홍창남 on 2017. 12. 28..
 //  Copyright © 2017년 홍창남. All rights reserved.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-public protocol TileImageScrollViewDelegate {
-    func didScroll(scrollView: TileImageScrollView)
-    func didZoom(scrollView: TileImageScrollView)
+public protocol THTiledImageScrollViewDelegate: class {
+    func didScroll(scrollView: THTiledImageScrollView)
+    func didZoom(scrollView: THTiledImageScrollView)
 }
 
-public protocol TileImageViewDataSource: class {
+public protocol THTiledImageViewDataSource: class {
 
-    var delegate: TileImageScrollViewDelegate? { get set }
+    var delegate: THTiledImageScrollViewDelegate? { get set }
 
     // full Image size
     var originalImageSize: CGSize { get set }
@@ -44,10 +44,9 @@ public protocol TileImageViewDataSource: class {
 
 }
 
-extension TileImageViewDataSource {
+extension THTiledImageViewDataSource {
 
     var contentSize: CGSize {
         return self.originalImageSize
     }
 }
-

@@ -1,6 +1,6 @@
 //
-//  TileImageView.swift
-//  MyTileImageViewer
+//  THTiledImageView.swift
+//  THTiledImageView
 //
 //  Created by 홍창남 on 2017. 12. 30..
 //  Copyright © 2017년 홍창남. All rights reserved.
@@ -21,11 +21,11 @@ class TiledLayer: CATiledLayer {
     }
 }
 
-class TileImageView: UIView {
+class THTiledImageView: UIView {
 
     let cachesPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0] as String
 
-    var dataSource: TileImageViewDataSource?
+    var dataSource: THTiledImageViewDataSource?
 
     override class var layerClass: AnyClass {
         return TiledLayer.self
@@ -35,7 +35,7 @@ class TileImageView: UIView {
         super.init(frame: frame)
     }
 
-    convenience init(dataSource: TileImageViewDataSource) {
+    convenience init(dataSource: THTiledImageViewDataSource) {
         self.init(frame: CGRect(origin: CGPoint.zero, size: dataSource.originalImageSize))
 
         guard let layer = self.layer as? TiledLayer else { return }

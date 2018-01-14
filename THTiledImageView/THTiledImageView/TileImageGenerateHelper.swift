@@ -1,6 +1,6 @@
 //
 //  TileImageGenerateHelper.swift
-//  MyTileImageViewer
+//  THTiledImageView
 //
 //  Created by 홍창남 on 2018. 1. 8..
 //  Copyright © 2018년 홍창남. All rights reserved.

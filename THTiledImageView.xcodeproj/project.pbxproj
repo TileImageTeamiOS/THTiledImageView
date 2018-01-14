@@ -34,7 +34,7 @@
 		7EC640831FFCB2AB00B1D7F1 /* smallBench.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = smallBench.jpg; sourceTree = "<group>"; };
 		7EE82A4D1FF8E61300901157 /* bench.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bench.jpg; sourceTree = "<group>"; };
 		7EF458E920036D81000EC706 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		7EF71CD81FF4C13D001C3EF2 /* MyTileImageViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTileImageViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EF71CD81FF4C13D001C3EF2 /* THTiledImageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THTiledImageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF71CDB1FF4C13D001C3EF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EF71CDD1FF4C13D001C3EF2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7EF71CE01FF4C13D001C3EF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 			children = (
 				7EF458E920036D81000EC706 /* LICENSE */,
 				7E95FEC72003638100580A13 /* README.md */,
-				7EF71CDA1FF4C13D001C3EF2 /* MyTileImageViewer */,
+				7EF71CDA1FF4C13D001C3EF2 /* THTiledImageView */,
 				7EF71CD91FF4C13D001C3EF2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,12 +79,12 @@
 		7EF71CD91FF4C13D001C3EF2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7EF71CD81FF4C13D001C3EF2 /* MyTileImageViewer.app */,
+				7EF71CD81FF4C13D001C3EF2 /* THTiledImageView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7EF71CDA1FF4C13D001C3EF2 /* MyTileImageViewer */ = {
+		7EF71CDA1FF4C13D001C3EF2 /* THTiledImageView */ = {
 			isa = PBXGroup;
 			children = (
 				7EC6407F1FFC994400B1D7F1 /* windingRoad.jpg */,
@@ -92,15 +92,15 @@
 				7EC640831FFCB2AB00B1D7F1 /* smallBench.jpg */,
 				7E0C4F971FF730A100778CED /* Supporting Files */,
 				7EF71CE71FF4C13D001C3EF2 /* Info.plist */,
-				7EF71CF21FF4C90C001C3EF2 /* TileImageView */,
+				7EF71CF21FF4C90C001C3EF2 /* THTiledImageView */,
 				7EF71CDD1FF4C13D001C3EF2 /* ViewController.swift */,
 				7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */,
 				7EF71CDF1FF4C13D001C3EF2 /* Main.storyboard */,
 			);
-			path = MyTileImageViewer;
+			path = THTiledImageView;
 			sourceTree = "<group>";
 		};
-		7EF71CF21FF4C90C001C3EF2 /* TileImageView */ = {
+		7EF71CF21FF4C90C001C3EF2 /* THTiledImageView */ = {
 			isa = PBXGroup;
 			children = (
 				7EF71CEE1FF4C58B001C3EF2 /* TileImageScrollView.swift */,
@@ -109,15 +109,15 @@
 				7E0C4F9C1FF73CAB00778CED /* TileImageContentView.swift */,
 				7E95FEC5200361E200580A13 /* TileImageGenerateHelper.swift */,
 			);
-			path = TileImageView;
+			path = THTiledImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7EF71CD71FF4C13D001C3EF2 /* MyTileImageViewer */ = {
+		7EF71CD71FF4C13D001C3EF2 /* THTiledImageView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7EF71CEA1FF4C13D001C3EF2 /* Build configuration list for PBXNativeTarget "MyTileImageViewer" */;
+			buildConfigurationList = 7EF71CEA1FF4C13D001C3EF2 /* Build configuration list for PBXNativeTarget "THTiledImageView" */;
 			buildPhases = (
 				7EF71CD41FF4C13D001C3EF2 /* Sources */,
 				7EF71CD51FF4C13D001C3EF2 /* Frameworks */,
@@ -128,9 +128,9 @@
 			);
 			dependencies = (
 			);
-			name = MyTileImageViewer;
+			name = THTiledImageView;
 			productName = MyTileImageViewer;
-			productReference = 7EF71CD81FF4C13D001C3EF2 /* MyTileImageViewer.app */;
+			productReference = 7EF71CD81FF4C13D001C3EF2 /* THTiledImageView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -149,7 +149,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7EF71CD31FF4C13D001C3EF2 /* Build configuration list for PBXProject "MyTileImageViewer" */;
+			buildConfigurationList = 7EF71CD31FF4C13D001C3EF2 /* Build configuration list for PBXProject "THTiledImageView" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -162,7 +162,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7EF71CD71FF4C13D001C3EF2 /* MyTileImageViewer */,
+				7EF71CD71FF4C13D001C3EF2 /* THTiledImageView */,
 			);
 		};
 /* End PBXProject section */
@@ -351,9 +351,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6XUQ3PPN9;
-				INFOPLIST_FILE = MyTileImageViewer/Info.plist;
+				INFOPLIST_FILE = THTiledImageView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hcn1519.MyTileImageViewer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hcn1519.THTileImageView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -366,9 +366,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6XUQ3PPN9;
-				INFOPLIST_FILE = MyTileImageViewer/Info.plist;
+				INFOPLIST_FILE = THTiledImageView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hcn1519.MyTileImageViewer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hcn1519.THTileImageView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -378,7 +378,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7EF71CD31FF4C13D001C3EF2 /* Build configuration list for PBXProject "MyTileImageViewer" */ = {
+		7EF71CD31FF4C13D001C3EF2 /* Build configuration list for PBXProject "THTiledImageView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7EF71CE81FF4C13D001C3EF2 /* Debug */,
@@ -387,7 +387,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7EF71CEA1FF4C13D001C3EF2 /* Build configuration list for PBXNativeTarget "MyTileImageViewer" */ = {
+		7EF71CEA1FF4C13D001C3EF2 /* Build configuration list for PBXNativeTarget "THTiledImageView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7EF71CEB1FF4C13D001C3EF2 /* Debug */,

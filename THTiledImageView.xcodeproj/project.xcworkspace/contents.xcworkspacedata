@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MyTileImageViewer.xcodeproj">
+      location = "self:/Users/changnam/Desktop/StorytellingKit/THTiledImageView.xcodeproj">
    </FileRef>
 </Workspace>
