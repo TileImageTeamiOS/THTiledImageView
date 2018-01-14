@@ -1,5 +1,6 @@
 #  THTiledImageView
 
+
 ![Version](https://img.shields.io/badge/pod-v0.2.0-blue.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://github.com/younatics/YNDropDownMenu/blob/master/LICENSE)
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
@@ -21,11 +22,13 @@ pod "THTiledImageView"
 
 1. `THTiledImageScrollView` is subclass of UIScrollVIew. Create `THTiledImageScrollView` from Storyboard or programmatically.
 
+
 2. Create dataSource class that is subclass of `THTiledImageViewDataSource`.
 
 ```
 var dataSource: THTiledImageViewDataSource?
 ```
+
 
 3. Here is `THTiledImageViewDataSource` options that you can use.
 
@@ -54,6 +57,7 @@ func setupExample(imageSize: CGSize, tileSize: [CGSize], imageURL: URL) {
 
 ### Cutting Image
 
+
 > ❗️ So far cutting and rendering images cannot be done simultaneously. You should cut image first, and relaunch the app.
 
 We offer you image cutting function(`UIImage.saveTileOf(size:name:withExtension:)`. Specify the size of tiles by levels.
@@ -66,7 +70,6 @@ let tiles: [CGSize] = [CGSize(width: 512, height: 512), CGSize(width: 256, heigh
 UIImage.saveTileOf(size: tiles, name: "bench", withExtension: "jpg")
 ```
 
-
 #### Tiled Images path
 
 Tiled images will be saved on your cache directory. Path of the cache directory:
@@ -74,7 +77,6 @@ Tiled images will be saved on your cache directory. Path of the cache directory:
 ```
 let cachesPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0] as String
 ```
-
 
 If imagefile saved successfully, you can see images from cache directory. Here is the rule of directory path and image file name rules.
 ```
