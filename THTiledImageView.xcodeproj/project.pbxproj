@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E01F322200B4B0B00725AE8 /* example_level_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E01F320200B4B0B00725AE8 /* example_level_5.png */; };
-		7E01F323200B4B0B00725AE8 /* example_level_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E01F321200B4B0B00725AE8 /* example_level_1.png */; };
 		7E01F325200B4BDF00725AE8 /* THTileImageView.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7E01F324200B4BDF00725AE8 /* THTileImageView.gif */; };
+		7E01F328200B4EAD00725AE8 /* example_level_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E01F326200B4EAD00725AE8 /* example_level_5.png */; };
+		7E01F329200B4EAD00725AE8 /* example_level_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E01F327200B4EAD00725AE8 /* example_level_1.png */; };
 		7E0C4F9B1FF7357D00778CED /* THTileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9A1FF7357D00778CED /* THTileImageView.swift */; };
 		7E0C4F9D1FF73CAB00778CED /* THTiledImageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9C1FF73CAB00778CED /* THTiledImageContentView.swift */; };
 		7E0C4F9F1FF73F5100778CED /* MyTileImageViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */; };
@@ -28,9 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7E01F320200B4B0B00725AE8 /* example_level_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = example_level_5.png; sourceTree = "<group>"; };
-		7E01F321200B4B0B00725AE8 /* example_level_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = example_level_1.png; sourceTree = "<group>"; };
 		7E01F324200B4BDF00725AE8 /* THTileImageView.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = THTileImageView.gif; sourceTree = "<group>"; };
+		7E01F326200B4EAD00725AE8 /* example_level_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = example_level_5.png; sourceTree = "<group>"; };
+		7E01F327200B4EAD00725AE8 /* example_level_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = example_level_1.png; sourceTree = "<group>"; };
 		7E0C4F9A1FF7357D00778CED /* THTileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTileImageView.swift; sourceTree = "<group>"; };
 		7E0C4F9C1FF73CAB00778CED /* THTiledImageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTiledImageContentView.swift; sourceTree = "<group>"; };
 		7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTileImageViewDataSource.swift; sourceTree = "<group>"; };
@@ -66,8 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				7E01F324200B4BDF00725AE8 /* THTileImageView.gif */,
-				7E01F321200B4B0B00725AE8 /* example_level_1.png */,
-				7E01F320200B4B0B00725AE8 /* example_level_5.png */,
+				7E01F327200B4EAD00725AE8 /* example_level_1.png */,
+				7E01F326200B4EAD00725AE8 /* example_level_5.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -190,14 +190,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EC640841FFCB2AB00B1D7F1 /* smallBench.jpg in Resources */,
+				7E01F329200B4EAD00725AE8 /* example_level_1.png in Resources */,
 				7EE82A4E1FF8E61300901157 /* bench.jpg in Resources */,
 				7EF71CE61FF4C13D001C3EF2 /* LaunchScreen.storyboard in Resources */,
 				7EF458EA20036D81000EC706 /* LICENSE in Resources */,
-				7E01F323200B4B0B00725AE8 /* example_level_1.png in Resources */,
 				7EF71CE31FF4C13D001C3EF2 /* Assets.xcassets in Resources */,
-				7E01F322200B4B0B00725AE8 /* example_level_5.png in Resources */,
 				7E01F325200B4BDF00725AE8 /* THTileImageView.gif in Resources */,
 				7EC640801FFC994400B1D7F1 /* windingRoad.jpg in Resources */,
+				7E01F328200B4EAD00725AE8 /* example_level_5.png in Resources */,
 				7EF71CE11FF4C13D001C3EF2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
