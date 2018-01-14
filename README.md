@@ -9,12 +9,17 @@
 
 ## Feature
 
+![THTiledImageView](images/THTiledImageView.gif)
 
 ## Installation
 
 ```
 pod "THTiledImageView"
 ```
+
+## Requirements
+
+`THTiledImageView` is written in Swift 4, and compatible with iOS 9.0+
 
 ## How to use
 
@@ -38,12 +43,14 @@ func setupExample(imageSize: CGSize, tileSize: [CGSize], imageURL: URL) {
     dataSource = MyTileImageViewDataSource(imageSize: imageSize, tileSize: tileSize, imageURL: imageURL)
     dataSource?.thumbnailImageName = "bench"
 
-    // 줌을 가장 많이 확대한 수준
+    // maximun tile level
+    // When you zoom in this level, you can see level 5 tiles.
     dataSource?.maxTileLevel = 5
 
-    // 줌이 가장 확대가 안 된 수준
+    // minimum tile level
     dataSource?.minTileLevel = 1
 
+    // scrollView allowable maximum zoom level
     dataSource?.maxZoomLevel = 8
 
     dataSource?.imageExtension = "jpg"
@@ -55,8 +62,28 @@ func setupExample(imageSize: CGSize, tileSize: [CGSize], imageURL: URL) {
 }
 ```
 
-### Cutting Image
+### Zoom and Tile Level
 
+`THTiledImageView`'s zoom level and tile level can be set separately.
+
+#### Zoom Level
+
+UIScrollView's Zoom level. Default `minimum zoom level` is scale aspect fit size of scrollView. `maximum zoom level` is allowable zoom in level.
+
+#### Tile Level
+
+Tiled images can be shown at specific zoom level based on tile level. For example, if you set `(minTileLevel, maxTileLevel) = (1, 5)`, You can set 5 different images by tile level.
+
+Tile level 1 can be used wide range.
+
+<img src="images/example_level_1.png" style="width:600px;">
+
+Tile level 5(or more than 1) can be used narrow range.
+
+<img src="images/example_level_5.png" style="width:600px;">
+
+
+### Cutting Image
 
 > ❗️ So far cutting and rendering images cannot be done simultaneously. You should cut image first, and relaunch the app.
 
@@ -80,7 +107,10 @@ let cachesPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDoma
 ```
 
 If imagefile saved successfully, you can see images from cache directory. Here is the rule of directory path and image file name rules.
+
 ```
 Path Rules ./imageName/imageSize/{imageName_imageSize_level_x_y}.jpg
 Example    ./bench/256/bench_256_1_0_0.jpg
 ```
+
+> ❗️ You need to obey the path rules, if you create images on your own.
