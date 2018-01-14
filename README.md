@@ -1,7 +1,7 @@
 #  THTiledImageView
 
 
-![Version](https://img.shields.io/badge/pod-v0.2.0-blue.svg)
+![Version](https://img.shields.io/badge/pod-v0.2.1-blue.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://github.com/younatics/YNDropDownMenu/blob/master/LICENSE)
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)
@@ -74,11 +74,11 @@ UIScrollView's Zoom level. Default `minimum zoom level` is scale aspect fit size
 
 Tiled images can be shown at specific zoom level based on tile level. For example, if you set `(minTileLevel, maxTileLevel) = (1, 5)`, You can set 5 different images by tile level.
 
-Tile level 1 can be used wide range.
+Tile level 1 can be used wide range of image.
 
 <img src="images/example_level_1.png" style="max-width: 50%">
 
-Tile level 5(or more than 1) can be used narrow range.
+Tile level 5(or more than 1) can be used narrow range of image.
 
 <img src="images/example_level_5.png" style="max-width: 50%">
 
@@ -113,4 +113,4 @@ Path Rules ./imageName/imageSize/{imageName_imageSize_level_x_y}.jpg
 Example    ./bench/256/bench_256_1_0_0.jpg
 ```
 
-> ❗️ You need to obey the path rules, if you create images on your own.
+> ❗️ If you create images on your own, you need to obey the path rules.
