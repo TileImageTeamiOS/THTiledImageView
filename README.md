@@ -9,7 +9,7 @@
 
 ## Feature
 
-![THTiledImageView](images/THTiledImageView.gif)
+<img src="images/THTiledImageView.gif" style="max-width: 50%">
 
 ## Installation
 
@@ -76,11 +76,11 @@ Tiled images can be shown at specific zoom level based on tile level. For exampl
 
 Tile level 1 can be used wide range.
 
-<img src="images/example_level_1.png" style="width:600px;">
+<img src="images/example_level_1.png" style="max-width: 50%">
 
 Tile level 5(or more than 1) can be used narrow range.
 
-<img src="images/example_level_5.png" style="width:600px;">
+<img src="images/example_level_5.png" style="max-width: 50%">
 
 
 ### Cutting Image
