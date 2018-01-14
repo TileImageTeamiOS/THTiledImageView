@@ -1,6 +1,5 @@
 #  THTiledImageView
 
-
 ![Version](https://img.shields.io/badge/pod-v0.2.1-blue.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://github.com/younatics/YNDropDownMenu/blob/master/LICENSE)
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
@@ -9,9 +8,19 @@
 
 ## Feature
 
+- [x] 🖼 `THTiledImageView` fully support `UIScrollView`. You can subclass it and use it.
+- [x] 🔪 Support Image Cutting Extension Method to generate tiled images.
+- [x] 🔍 You can set different tiled images based on user's zoom scale.
+
+## Demo
+
 ![THTileImageView](images/THTileImageView.gif)
 
 ## Installation
+
+### CocoaPods
+
+To integrate `THTiledImageView` into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```
 pod "THTiledImageView"
@@ -30,14 +39,14 @@ pod "THTiledImageView"
 
 2. Create dataSource class that is subclass of `THTiledImageViewDataSource`.
 
-```
+```Swift
 var dataSource: THTiledImageViewDataSource?
 ```
 
 
 3. Here is `THTiledImageViewDataSource` options that you can use.
 
-```
+```Swift
 func setupExample(imageSize: CGSize, tileSize: [CGSize], imageURL: URL) {
 
     dataSource = MyTileImageViewDataSource(imageSize: imageSize, tileSize: tileSize, imageURL: imageURL)
@@ -89,7 +98,7 @@ Tile level 5(or more than 1) can be used narrow range of image.
 
 We offer you image cutting function(`UIImage.saveTileOf(size:name:withExtension:)`. Specify the size of tiles by levels.
 
-```
+```Swift
 // size and level will be 512-1, 256-2, 128-3(size-level).
 let tiles: [CGSize] = [CGSize(width: 512, height: 512),
                        CGSize(width: 256, height: 256), CGSize(width: 128, height: 128)]
@@ -102,7 +111,7 @@ UIImage.saveTileOf(size: tiles, name: "bench", withExtension: "jpg")
 
 Tiled images will be saved on your cache directory. Path of the cache directory:
 
-```
+```Swift
 let cachesPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0] as String
 ```
 
@@ -114,3 +123,20 @@ Example    ./bench/256/bench_256_1_0_0.jpg
 ```
 
 > ❗️ If you create images on your own, you need to obey the path rules.
+
+### THTiledImageScrollViewDelegate
+
+You can use `UIScrollViewDelegate` methods from `THTiledImageScrollViewDelegate`.
+
+```Swift
+public protocol THTiledImageScrollViewDelegate: class {
+    func didScroll(scrollView: THTiledImageScrollView)
+    func didZoom(scrollView: THTiledImageScrollView)
+}
+```
+
+See our example for more details.
+
+## License
+
+`THTiledImageView` is released under the MIT license. [See LICENSE](https://github.com/TileImageTeamiOS/THTiledImageView/blob/master/LICENSE) for details.
