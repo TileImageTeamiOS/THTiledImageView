@@ -24,7 +24,8 @@ extension FileManager {
 }
 
 extension UIImage {
-    public class func saveTileOf(size: [CGSize], name: String, withExtension: String) {
+    public class func saveTileOf(size: [CGSize], name: String,
+                                 withExtension: String, completion: @escaping (Bool) -> Void ) {
 
         let cachesPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0] as String
 
@@ -99,8 +100,11 @@ extension UIImage {
                             }
                         }
                         print("\(imageSize.width) image cutting finish")
+                        completion(true)
                     }
                 }
+            } else {
+                completion(false)
             }
         }
     }

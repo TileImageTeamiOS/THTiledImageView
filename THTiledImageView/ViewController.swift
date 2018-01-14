@@ -20,7 +20,9 @@ class ViewController: UIViewController {
                                CGSize(width: 512, height: 512), CGSize(width: 256, height: 256),
                                CGSize(width: 128, height: 128)]
 
-        UIImage.saveTileOf(size: tiles, name: "bench", withExtension: "jpg")
+        UIImage.saveTileOf(size: tiles, name: "bench", withExtension: "jpg") { _ in
+
+        }
 
         let imageSize = CGSize(width: 5214, height: 7300)
         let thumbnailImageURL = Bundle.main.url(forResource: "smallBench", withExtension: "jpg")!
