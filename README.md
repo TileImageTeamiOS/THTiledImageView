@@ -9,8 +9,7 @@
 
 ## Feature
 
-<img src="images/THTiledImageView.gif" style="max-width: 50%">
-![gif-view](images/THTiledImageView.gif)
+![THTileImageView](images/THTileImageView.gif)
 
 ## Installation
 
