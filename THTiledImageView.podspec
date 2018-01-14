@@ -4,7 +4,8 @@ Pod::Spec.new do |s|
   s.summary          = 'High Quality Image ScrollView using cropped tiled images.'
 
   s.description      = <<-DESC
-                       Rendering High Quality Image from cropped tiled image.
+                       Rendering High Quality Image from cropped tiled images.
+                       You can set images by level and, render different images(normally smaller images) easily.
                        DESC
 
   s.homepage         = 'https://github.com/TileImageTeamiOS/'
