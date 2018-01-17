@@ -49,27 +49,30 @@ var dataSource: THTiledImageViewDataSource?
 ```Swift
 func setupExample(imageSize: CGSize, tileSize: [CGSize], imageURL: URL) {
 
-    dataSource = MyTileImageViewDataSource(imageSize: imageSize, tileSize: tileSize, imageURL: imageURL)
-    dataSource?.thumbnailImageName = "bench"
+    if let dataSource = MyTileImageViewDataSource(imageSize: imageSize, tileSize: tileSize, imageURL: imageURL) {
+        dataSource.thumbnailImageName = "bench"
 
-    // maximun tile level
-    // When you zoom in this level, you can see level 5 tiles.
-    dataSource?.maxTileLevel = 5
+        // maximun tile level
+        // When you zoom in this level, you can see level 5 tiles.
+        dataSource.maxTileLevel = 5
 
-    // minimum tile level
-    dataSource?.minTileLevel = 1
+        // minimum tile level
+        dataSource.minTileLevel = 1
 
-    // scrollView allowable maximum zoom level
-    dataSource?.maxZoomLevel = 8
+        // scrollView allowable maximum zoom level
+        dataSource.maxZoomLevel = 8
 
-    dataSource?.imageExtension = "jpg"
-    tileImageScrollView.set(dataSource: dataSource!)
+        dataSource.imageExtension = "jpg"
+        tileImageScrollView.set(dataSource: dataSource)
 
-    dataSource?.requestBackgroundImage { _ in
-        // do something after image shows.
+        dataSource.requestBackgroundImage { _ in
+            // do something after image shows.
+        }
     }
 }
 ```
+
+For more detail, take a look at our example in the project.
 
 ### Zoom and Tile Level
 
@@ -94,7 +97,7 @@ Tile level 5(or more than 1) can be used narrow range of image.
 
 ### Cutting Image
 
-> ❗️ So far cutting and rendering images cannot be done simultaneously. You should cut image first, and relaunch the app.
+> ❗️ So far cutting and rendering images cannot be done simultaneously. You should cut an image first(from another viewController), and render the image.
 
 We offer you image cutting function(`UIImage.saveTileOf(size:name:withExtension:)`. Specify the size of tiles by levels.
 
