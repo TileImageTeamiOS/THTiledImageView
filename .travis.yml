@@ -1,0 +1,5 @@
+language: swift
+osx_image: xcode9.2
+xcode_project: THTiledImageView.xcodeproj #3
+xcode_scheme: THTiledImageView #4
+xcode_sdk: iphonesimulator11.2 #5
