@@ -1,5 +1,7 @@
 #  THTiledImageView
 
+[![Build Status](https://travis-ci.org/TileImageTeamiOS/THTiledImageView.svg?branch=master)](https://travis-ci.org/TileImageTeamiOS/THTiledImageView)
+
 ![Version](https://img.shields.io/badge/pod-v0.2.1-blue.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://github.com/younatics/YNDropDownMenu/blob/master/LICENSE)
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
