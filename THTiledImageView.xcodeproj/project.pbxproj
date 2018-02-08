@@ -25,9 +25,13 @@
 		7EF71CE61FF4C13D001C3EF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EF71CE41FF4C13D001C3EF2 /* LaunchScreen.storyboard */; };
 		7EF71CEF1FF4C58B001C3EF2 /* THTiledImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF71CEE1FF4C58B001C3EF2 /* THTiledImageScrollView.swift */; };
 		7EF71CF11FF4C612001C3EF2 /* THTiledImageViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF71CF01FF4C612001C3EF2 /* THTiledImageViewDataSource.swift */; };
+		9A7281D899F183B5153DBD56 /* Pods_THTiledImageView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D337711A0310A9C1F8D4D79 /* Pods_THTiledImageView.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D337711A0310A9C1F8D4D79 /* Pods_THTiledImageView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_THTiledImageView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F83F5CF280E2F1AB662AD38 /* Pods-THTiledImageView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THTiledImageView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-THTiledImageView/Pods-THTiledImageView.debug.xcconfig"; sourceTree = "<group>"; };
+		2CBFF635114B23A86A2F71B7 /* Pods-THTiledImageView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THTiledImageView.release.xcconfig"; path = "Pods/Target Support Files/Pods-THTiledImageView/Pods-THTiledImageView.release.xcconfig"; sourceTree = "<group>"; };
 		7E01F324200B4BDF00725AE8 /* THTileImageView.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = THTileImageView.gif; sourceTree = "<group>"; };
 		7E01F326200B4EAD00725AE8 /* example_level_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = example_level_5.png; sourceTree = "<group>"; };
 		7E01F327200B4EAD00725AE8 /* example_level_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = example_level_1.png; sourceTree = "<group>"; };
@@ -56,12 +60,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A7281D899F183B5153DBD56 /* Pods_THTiledImageView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6AB876AF49B1D2EBE985C435 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F83F5CF280E2F1AB662AD38 /* Pods-THTiledImageView.debug.xcconfig */,
+				2CBFF635114B23A86A2F71B7 /* Pods-THTiledImageView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7E01F31F200B4A8900725AE8 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +104,8 @@
 				7E95FEC72003638100580A13 /* README.md */,
 				7EF71CDA1FF4C13D001C3EF2 /* THTiledImageView */,
 				7EF71CD91FF4C13D001C3EF2 /* Products */,
+				6AB876AF49B1D2EBE985C435 /* Pods */,
+				89D5950939D9480C2871A0B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +145,14 @@
 			path = THTiledImageView;
 			sourceTree = "<group>";
 		};
+		89D5950939D9480C2871A0B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D337711A0310A9C1F8D4D79 /* Pods_THTiledImageView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,10 +160,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7EF71CEA1FF4C13D001C3EF2 /* Build configuration list for PBXNativeTarget "THTiledImageView" */;
 			buildPhases = (
+				4CAF827FB3818E2005320233 /* [CP] Check Pods Manifest.lock */,
 				7EF71CD41FF4C13D001C3EF2 /* Sources */,
 				7EF71CD51FF4C13D001C3EF2 /* Frameworks */,
 				7EF71CD61FF4C13D001C3EF2 /* Resources */,
 				7E063CF51FF6258100347F57 /* ShellScript */,
+				D741B29CD151956F4E71555B /* [CP] Embed Pods Frameworks */,
+				7CB5F32B058D49B5373E1570 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,6 +232,39 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4CAF827FB3818E2005320233 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-THTiledImageView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CB5F32B058D49B5373E1570 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-THTiledImageView/Pods-THTiledImageView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7E063CF51FF6258100347F57 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -217,6 +277,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		D741B29CD151956F4E71555B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-THTiledImageView/Pods-THTiledImageView-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-THTiledImageView/Pods-THTiledImageView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -367,6 +445,7 @@
 		};
 		7EF71CEB1FF4C13D001C3EF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F83F5CF280E2F1AB662AD38 /* Pods-THTiledImageView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -382,6 +461,7 @@
 		};
 		7EF71CEC1FF4C13D001C3EF2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CBFF635114B23A86A2F71B7 /* Pods-THTiledImageView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
