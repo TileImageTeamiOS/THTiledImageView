@@ -143,3 +143,6 @@ See our example for more details.
 ## License
 
 `THTiledImageView` is released under the MIT license. [See LICENSE](https://github.com/TileImageTeamiOS/THTiledImageView/blob/master/LICENSE) for details.
+
+
+![](https://travis-ci.org/hcn1519 / THTiledImageView.svg?branch=master)
