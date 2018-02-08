@@ -8,8 +8,7 @@ env:
   - LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8
 
 before_install:
-  - rvm install ruby-2.4.2
   - brew update
 
 script:
-- xcodebuild clean build test -project THTiledImageView.xcodeproj -scheme THTiledImageView
+- xcodebuild -project THTiledImageView.xcodeproj -scheme THTiledImageView -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
