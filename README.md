@@ -4,12 +4,8 @@
 [![Version](https://cocoapod-badges.herokuapp.com/v/THTiledImageView/badge.png)](http://cocoadocs.org/docsets/THTiledImageView/0.2.2)
 [![platform](https://cocoapod-badges.herokuapp.com/p/THTiledImageView/badge.png)](http://cocoadocs.org/docsets/THTiledImageView/0.2.2)
 [![License](https://cocoapod-badges.herokuapp.com/l/THTiledImageView/badge.png)](http://cocoadocs.org/docsets/THTiledImageView/0.2.2)
-
 [![Swift 4.0](https://img.shields.io/badge/Swift-4.0-%23FB613C.svg)](https://developer.apple.com/swift/)
 
-
-
-[![Swift 4.0]](https://img.shields.io/cocoapods/v/THTiledImageView.svg)
 
 ## Feature
 
