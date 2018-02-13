@@ -9,6 +9,7 @@
 import UIKit
 
 class MyTileImageViewDataSource: THTiledImageViewDataSource {
+
     weak var delegate: THTiledImageScrollViewDelegate?
 
     var minTileLevel: Int
@@ -20,48 +21,29 @@ class MyTileImageViewDataSource: THTiledImageViewDataSource {
     var originalImageSize: CGSize
 
     var maxZoomLevel: CGFloat?
-    var imageURL: URL
-    var image: UIImage
+
+    var backgroundImage: UIImage?
+    var backgroundImageURL: URL?
     var imageExtension: String
 
-    init(imageSize: CGSize, tileSize: [CGSize], imageURL: URL) {
+    var tileImageBaseURL: URL?
+    var accessFromServer: Bool
+
+    init(tileImageBaseURL: URL? = nil, imageSize: CGSize, tileSize: [CGSize]) {
+        if let tileImageBaseURL = tileImageBaseURL {
+            self.tileImageBaseURL = tileImageBaseURL
+            self.accessFromServer = true
+        } else {
+
+            self.accessFromServer = false
+        }
+
         self.originalImageSize = imageSize
         self.tileSize = tileSize
-        self.imageURL = imageURL
-        self.image = UIImage()
+
         self.maxTileLevel = tileSize.count
         self.minTileLevel = 1
         self.imageExtension = "jpg"
-    }
-
-    func requestBackgroundImage(completion: @escaping (UIImage?) -> Void) {
-
-        if imageURL.absoluteString.hasPrefix("https") {
-            // Server
-            let session = URLSession(configuration: .default)
-            let request = URLRequest(url: imageURL)
-
-            let dataTask = session.dataTask(with: request) { data, response, error in
-                guard error == nil else { return }
-                guard let response = response as? HTTPURLResponse else { return }
-
-                switch response.statusCode {
-                case 200:
-                    if let data = data, let image = UIImage(data: data) {
-                        self.image = image
-                        completion(self.image)
-                    }
-                default:
-                    completion(nil)
-                }
-            }
-            dataTask.resume()
-        } else {
-            // Local
-            self.image = UIImage(contentsOfFile: imageURL.path)!
-            completion(self.image)
-        }
-
     }
 
 }

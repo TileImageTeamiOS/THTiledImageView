@@ -35,18 +35,54 @@ public protocol THTiledImageViewDataSource: class {
     var thumbnailImageName: String { get set }
 
     // Image Info
-    var imageURL: URL { get set }
-    var image: UIImage { get set }
+    var tileImageBaseURL: URL? { get set }
     var imageExtension: String { get set }
 
-    // Set BackgroundImage From URL
-    func requestBackgroundImage(completion: @escaping (UIImage?) -> Void)
+    var backgroundImage: UIImage? { get set }
+    var backgroundImageURL: URL? { get set }
 
+    var accessFromServer: Bool { get set }
+
+    // Set BackgroundImage From Remote URL
+    func requestBackgroundImage(completionHandler: @escaping (UIImage?) -> Void)
+
+    // Use Local Background Image
+    func setBackgroundImage(url: URL)
 }
 
 extension THTiledImageViewDataSource {
-
     var contentSize: CGSize {
         return self.originalImageSize
+    }
+
+    func requestBackgroundImage(completionHandler: @escaping (UIImage?) -> Void) {
+        guard let url = self.backgroundImageURL else {
+            fatalError("You need to set backgroundImage URL")
+        }
+
+        let session = URLSession(configuration: .default)
+        let request = URLRequest(url: url)
+
+        let dataTask = session.dataTask(with: request) { data, response, error in
+            guard error == nil else { return }
+            guard let response = response as? HTTPURLResponse else { return }
+
+            switch response.statusCode {
+            case 200:
+                if let data = data, let image = UIImage(data: data) {
+                    self.backgroundImage = image
+                    completionHandler(self.backgroundImage)
+                }
+            default:
+                completionHandler(nil)
+            }
+        }
+        dataTask.resume()
+    }
+
+    func setBackgroundImage(url: URL) {
+        if let image = UIImage(contentsOfFile: url.path) {
+            self.backgroundImage = image
+        }
     }
 }
