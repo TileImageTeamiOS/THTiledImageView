@@ -10,9 +10,11 @@
 		7E01F325200B4BDF00725AE8 /* THTileImageView.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7E01F324200B4BDF00725AE8 /* THTileImageView.gif */; };
 		7E01F328200B4EAD00725AE8 /* example_level_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E01F326200B4EAD00725AE8 /* example_level_5.png */; };
 		7E01F329200B4EAD00725AE8 /* example_level_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E01F327200B4EAD00725AE8 /* example_level_1.png */; };
+		7E026C25202C76BF00E9E7AF /* THImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E026C24202C76BF00E9E7AF /* THImageManager.swift */; };
 		7E0C4F9B1FF7357D00778CED /* THTileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9A1FF7357D00778CED /* THTileImageView.swift */; };
 		7E0C4F9D1FF73CAB00778CED /* THTiledImageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9C1FF73CAB00778CED /* THTiledImageContentView.swift */; };
 		7E0C4F9F1FF73F5100778CED /* MyTileImageViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */; };
+		7E10AFEC203179C000263B91 /* THTiledImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E10AFEB203179C000263B91 /* THTiledImageViewTests.swift */; };
 		7E95FEC6200361E200580A13 /* THTiledImageGenerateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E95FEC5200361E200580A13 /* THTiledImageGenerateHelper.swift */; };
 		7EC640801FFC994400B1D7F1 /* windingRoad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EC6407F1FFC994400B1D7F1 /* windingRoad.jpg */; };
 		7EC640841FFCB2AB00B1D7F1 /* smallBench.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EC640831FFCB2AB00B1D7F1 /* smallBench.jpg */; };
@@ -28,6 +30,16 @@
 		9A7281D899F183B5153DBD56 /* Pods_THTiledImageView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D337711A0310A9C1F8D4D79 /* Pods_THTiledImageView.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7E10AFEE203179C000263B91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EF71CD01FF4C13D001C3EF2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7EF71CD71FF4C13D001C3EF2;
+			remoteInfo = THTiledImageView;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1D337711A0310A9C1F8D4D79 /* Pods_THTiledImageView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_THTiledImageView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F83F5CF280E2F1AB662AD38 /* Pods-THTiledImageView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THTiledImageView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-THTiledImageView/Pods-THTiledImageView.debug.xcconfig"; sourceTree = "<group>"; };
@@ -35,9 +47,13 @@
 		7E01F324200B4BDF00725AE8 /* THTileImageView.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = THTileImageView.gif; sourceTree = "<group>"; };
 		7E01F326200B4EAD00725AE8 /* example_level_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = example_level_5.png; sourceTree = "<group>"; };
 		7E01F327200B4EAD00725AE8 /* example_level_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = example_level_1.png; sourceTree = "<group>"; };
+		7E026C24202C76BF00E9E7AF /* THImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THImageManager.swift; sourceTree = "<group>"; };
 		7E0C4F9A1FF7357D00778CED /* THTileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTileImageView.swift; sourceTree = "<group>"; };
 		7E0C4F9C1FF73CAB00778CED /* THTiledImageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTiledImageContentView.swift; sourceTree = "<group>"; };
 		7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTileImageViewDataSource.swift; sourceTree = "<group>"; };
+		7E10AFE9203179BF00263B91 /* THTiledImageViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = THTiledImageViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E10AFEB203179C000263B91 /* THTiledImageViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTiledImageViewTests.swift; sourceTree = "<group>"; };
+		7E10AFED203179C000263B91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E95FEC5200361E200580A13 /* THTiledImageGenerateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTiledImageGenerateHelper.swift; sourceTree = "<group>"; };
 		7E95FEC72003638100580A13 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7EC6407F1FFC994400B1D7F1 /* windingRoad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = windingRoad.jpg; sourceTree = "<group>"; };
@@ -56,6 +72,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7E10AFE6203179BF00263B91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7EF71CD51FF4C13D001C3EF2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -96,6 +119,15 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7E10AFEA203179C000263B91 /* THTiledImageViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				7E10AFEB203179C000263B91 /* THTiledImageViewTests.swift */,
+				7E10AFED203179C000263B91 /* Info.plist */,
+			);
+			path = THTiledImageViewTests;
+			sourceTree = "<group>";
+		};
 		7EF71CCF1FF4C13D001C3EF2 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +135,7 @@
 				7EF458E920036D81000EC706 /* LICENSE */,
 				7E95FEC72003638100580A13 /* README.md */,
 				7EF71CDA1FF4C13D001C3EF2 /* THTiledImageView */,
+				7E10AFEA203179C000263B91 /* THTiledImageViewTests */,
 				7EF71CD91FF4C13D001C3EF2 /* Products */,
 				6AB876AF49B1D2EBE985C435 /* Pods */,
 				89D5950939D9480C2871A0B1 /* Frameworks */,
@@ -113,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				7EF71CD81FF4C13D001C3EF2 /* THTiledImageView.app */,
+				7E10AFE9203179BF00263B91 /* THTiledImageViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,6 +175,7 @@
 				7E0C4F9A1FF7357D00778CED /* THTileImageView.swift */,
 				7E0C4F9C1FF73CAB00778CED /* THTiledImageContentView.swift */,
 				7E95FEC5200361E200580A13 /* THTiledImageGenerateHelper.swift */,
+				7E026C24202C76BF00E9E7AF /* THImageManager.swift */,
 			);
 			path = THTiledImageView;
 			sourceTree = "<group>";
@@ -156,6 +191,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7E10AFE8203179BF00263B91 /* THTiledImageViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E10AFF0203179C000263B91 /* Build configuration list for PBXNativeTarget "THTiledImageViewTests" */;
+			buildPhases = (
+				7E10AFE5203179BF00263B91 /* Sources */,
+				7E10AFE6203179BF00263B91 /* Frameworks */,
+				7E10AFE7203179BF00263B91 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E10AFEF203179C000263B91 /* PBXTargetDependency */,
+			);
+			name = THTiledImageViewTests;
+			productName = THTiledImageViewTests;
+			productReference = 7E10AFE9203179BF00263B91 /* THTiledImageViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		7EF71CD71FF4C13D001C3EF2 /* THTiledImageView */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7EF71CEA1FF4C13D001C3EF2 /* Build configuration list for PBXNativeTarget "THTiledImageView" */;
@@ -187,9 +240,19 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "홍창남";
 				TargetAttributes = {
+					7E10AFE8203179BF00263B91 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7EF71CD71FF4C13D001C3EF2;
+					};
 					7EF71CD71FF4C13D001C3EF2 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -207,11 +270,19 @@
 			projectRoot = "";
 			targets = (
 				7EF71CD71FF4C13D001C3EF2 /* THTiledImageView */,
+				7E10AFE8203179BF00263B91 /* THTiledImageViewTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7E10AFE7203179BF00263B91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7EF71CD61FF4C13D001C3EF2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -299,6 +370,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7E10AFE5203179BF00263B91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E10AFEC203179C000263B91 /* THTiledImageViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7EF71CD41FF4C13D001C3EF2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -306,6 +385,7 @@
 				7EF71CF11FF4C612001C3EF2 /* THTiledImageViewDataSource.swift in Sources */,
 				7E0C4F9F1FF73F5100778CED /* MyTileImageViewDataSource.swift in Sources */,
 				7EF71CEF1FF4C58B001C3EF2 /* THTiledImageScrollView.swift in Sources */,
+				7E026C25202C76BF00E9E7AF /* THImageManager.swift in Sources */,
 				7E0C4F9D1FF73CAB00778CED /* THTiledImageContentView.swift in Sources */,
 				7E95FEC6200361E200580A13 /* THTiledImageGenerateHelper.swift in Sources */,
 				7EF71CDE1FF4C13D001C3EF2 /* ViewController.swift in Sources */,
@@ -315,6 +395,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7E10AFEF203179C000263B91 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7EF71CD71FF4C13D001C3EF2 /* THTiledImageView */;
+			targetProxy = 7E10AFEE203179C000263B91 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7EF71CDF1FF4C13D001C3EF2 /* Main.storyboard */ = {
@@ -336,6 +424,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7E10AFF1203179C000263B91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W6XUQ3PPN9;
+				INFOPLIST_FILE = THTiledImageViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hcn1519.THTiledImageViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/THTiledImageView.app/THTiledImageView";
+			};
+			name = Debug;
+		};
+		7E10AFF2203179C000263B91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W6XUQ3PPN9;
+				INFOPLIST_FILE = THTiledImageViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hcn1519.THTiledImageViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/THTiledImageView.app/THTiledImageView";
+			};
+			name = Release;
+		};
 		7EF71CE81FF4C13D001C3EF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -478,6 +598,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7E10AFF0203179C000263B91 /* Build configuration list for PBXNativeTarget "THTiledImageViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E10AFF1203179C000263B91 /* Debug */,
+				7E10AFF2203179C000263B91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7EF71CD31FF4C13D001C3EF2 /* Build configuration list for PBXProject "THTiledImageView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
