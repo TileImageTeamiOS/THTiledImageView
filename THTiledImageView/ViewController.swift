@@ -16,49 +16,48 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let tiles: [CGSize] = [CGSize(width: 2048, height: 2048), CGSize(width: 1024, height: 1024),
-                               CGSize(width: 512, height: 512), CGSize(width: 256, height: 256),
-                               CGSize(width: 128, height: 128)]
+        let tiles: [CGSize] = [CGSize(width: 1024, height: 1024), CGSize(width: 512, height: 512), CGSize(width: 256, height: 256)]
 
-        UIImage.saveTileOf(size: tiles, name: "bench", withExtension: "jpg") { _ in
-
-        }
+//        UIImage.saveTileOf(size: tiles, name: "bench", withExtension: "jpg") { _ in
+//
+//        }
 
         let imageSize = CGSize(width: 5214, height: 7300)
         let thumbnailImageURL = Bundle.main.url(forResource: "smallBench", withExtension: "jpg")!
 
-        setupExample(imageSize: imageSize, tileSize: tiles, imageURL: thumbnailImageURL)
+        let tileImageBaseURL = URL(string: "http://127.0.0.1:5000/bench")!
 
+        setupExample(tileImageBaseURL: tileImageBaseURL, imageSize: imageSize, tileSize: tiles, thumbnail: thumbnailImageURL)
+
+        let cachesPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0] as String
+        print(cachesPath)
     }
 
-    func setupExample(imageSize: CGSize, tileSize: [CGSize], imageURL: URL) {
+    func setupExample(tileImageBaseURL: URL, imageSize: CGSize, tileSize: [CGSize], thumbnail: URL) {
 
-        dataSource = MyTileImageViewDataSource(imageSize: imageSize, tileSize: tileSize, imageURL: imageURL)
-        dataSource?.thumbnailImageName = "bench"
+        dataSource = MyTileImageViewDataSource(tileImageBaseURL: tileImageBaseURL, imageSize: imageSize, tileSize: tileSize)
+
+        guard let dataSource = dataSource else { return }
+
+        dataSource.thumbnailImageName = "bench"
 
         // 줌을 가장 많이 확대한 수준
-        dataSource?.maxTileLevel = 5
+        dataSource.maxTileLevel = 3
 
         // 줌이 가장 확대가 안 된 수준
-        dataSource?.minTileLevel = 1
+        dataSource.minTileLevel = 1
 
-        dataSource?.maxZoomLevel = 8
+        dataSource.maxZoomLevel = 8
 
-        dataSource?.imageExtension = "jpg"
-        tileImageScrollView.set(dataSource: dataSource!)
+        dataSource.imageExtension = "jpg"
 
-        dataSource?.requestBackgroundImage { _ in
+        // Local Image For Background
+        dataSource.setBackgroundImage(url: thumbnail)
 
-        }
-    }
+        // Remote Image For Background
+//        dataSource.backgroundImageURL = URL(string: "https://dl.dropbox.com/s/g1oomszqsnc5eue/smallBench.jpg")!
+//        dataSource.requestBackgroundImage { _ in }
 
-    func dummy() {
-//        UIImage.saveTileOfSize(tiles, name: "windingRoad")
-//        let imageSize = CGSize(width: 5120, height: 3200)
-//        UIImage.saveTileOfSize(tileSize, name: "windingRoad")
-//        let imageSize = CGSize(width: 5120, height: 3200)
-//        let imageURL = Bundle.main.url(forResource: "bench", withExtension: "jpg")!
-//        let imageURL = Bundle.main.url(forResource: "windingRoad", withExtension: "jpg")!
-//        let imageURL = URL(string: "https://dl.dropbox.com/s/t1xwici6yuxplo0/bench.jpg")!
+        tileImageScrollView.set(dataSource: dataSource)
     }
 }

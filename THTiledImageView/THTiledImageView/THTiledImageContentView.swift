@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class THTiledImageContentView: UIView {
 
@@ -22,12 +23,18 @@ class THTiledImageContentView: UIView {
 
         backgroundImageView.contentMode = .scaleAspectFit
 
-        dataSource.requestBackgroundImage { [weak self] image in
-            DispatchQueue.main.async {
-                self?.backgroundImageView.image = image
+        if let backgroundImage = dataSource.backgroundImage {
+            backgroundImageView.image = backgroundImage
+        } else {
+            dataSource.requestBackgroundImage { image in
+                DispatchQueue.main.async {
+                    if let image = image {
+                        self.backgroundImageView.image = image
+                        self.backgroundImageView.setNeedsDisplay()
+                    }
+                }
             }
         }
-
         self.addSubview(backgroundImageView)
         self.addSubview(tileImageView)
     }

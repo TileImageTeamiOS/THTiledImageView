@@ -1,0 +1,33 @@
+function_parameter_count:
+  - 7 # warning
+  - 8 # error
+
+line_length:
+  - 200 # warning
+  - 300 # error
+
+force_cast: warning # implicitly. String! -> warning
+force_try:
+  severity: warning # explicitly. try! -> warning
+
+function_body_length:
+  - 100 # warning
+  - 200 # error
+
+type_body_length:
+  - 300 # warning
+  - 400 # error
+
+# or they can set both explicitly
+file_length:
+  warning: 500
+  error: 800
+
+type_name:
+  min_length: 4 # only warning
+  max_length: # warning and error
+    warning: 30
+    error: 35
+
+excluded:
+  - Pods

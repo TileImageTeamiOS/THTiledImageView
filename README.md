@@ -1,12 +1,11 @@
 #  THTiledImageView
 
 [![Build Status](https://travis-ci.org/TileImageTeamiOS/THTiledImageView.svg?branch=master)](https://travis-ci.org/TileImageTeamiOS/THTiledImageView)
-
-![Version](https://img.shields.io/badge/pod-v0.2.1-blue.svg)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://github.com/younatics/YNDropDownMenu/blob/master/LICENSE)
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
-![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)
+[![Version](https://cocoapod-badges.herokuapp.com/v/THTiledImageView/badge.png)](http://cocoadocs.org/docsets/THTiledImageView/0.2.2)
+[![platform](https://cocoapod-badges.herokuapp.com/p/THTiledImageView/badge.png)](http://cocoadocs.org/docsets/THTiledImageView/0.2.2)
+[![License](https://cocoapod-badges.herokuapp.com/l/THTiledImageView/badge.png)](http://cocoadocs.org/docsets/THTiledImageView/0.2.2)
 [![Swift 4.0](https://img.shields.io/badge/Swift-4.0-%23FB613C.svg)](https://developer.apple.com/swift/)
+
 
 ## Feature
 
