@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'THTiledImageView'
-  s.version          = '0.2.2'
+  s.version          = '0.3'
   s.summary          = 'High Quality Image ScrollView using cropped tiled images.'
 
   s.description      = <<-DESC
@@ -16,5 +16,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
   s.source_files = 'THTiledImageView/THTiledImageView/*.swift'
   s.frameworks = 'UIKit'
-
+  s.dependency 'Kingfisher'
 end
