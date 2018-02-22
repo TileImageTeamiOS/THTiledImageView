@@ -8,37 +8,13 @@
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
-            continueAfterRunningActions = "Yes"
-            filePath = "THTiledImageView/THTiledImageView/THTiledImageScrollView.swift"
-            timestampString = "540232728.630532"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "set(dataSource:)"
-            landmarkType = "7">
-            <Actions>
-               <BreakpointActionProxy
-                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
-                  <ActionContent
-                     consoleCommand = "po dataSource.backgroundImage">
-                  </ActionContent>
-               </BreakpointActionProxy>
-            </Actions>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "THTiledImageView/THTiledImageView/THTiledImageViewDataSource.swift"
-            timestampString = "540234830.617416"
+            timestampString = "540925618.914999"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "requestBackgroundImage(completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -50,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "THTiledImageView/THTiledImageView/THTiledImageViewDataSource.swift"
-            timestampString = "540234830.617488"
+            timestampString = "540925618.915207"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "requestBackgroundImage(completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>

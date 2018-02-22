@@ -20,6 +20,10 @@ class THTiledImageViewTests: XCTestCase {
         super.tearDown()
     }
 
+
+    func testTileImageScrollView() {
+        let tscrollView = THTiledImageScrollView()
+    }
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
