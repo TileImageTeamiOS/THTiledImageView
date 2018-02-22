@@ -9,7 +9,7 @@
 import Foundation
 import Kingfisher
 
-typealias THImageDownloaderCompletion = (UIImage, URL) -> Void
+typealias THImageDownloaderCompletion = (UIImage?, URL?, Error?) -> Void
 typealias THImageCacheCompletion = () -> Void
 
 class THImageDownloadManager {
@@ -19,11 +19,11 @@ class THImageDownloadManager {
         ImageDownloader.default.downloadImage(with: url, retrieveImageTask: nil,
                                               options: [], progressBlock: nil) { (image, error, url, _) in
                 if let error = error {
-                    print(error)
-                    return
+                    completion(nil, nil, error)
                 }
+
                 guard let image = image, let url = url else { return }
-                completion(image, url)
+                completion(image, url, nil)
         }
     }
 }

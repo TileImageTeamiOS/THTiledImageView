@@ -14,8 +14,6 @@ class THTiledImageContentView: UIView {
     let tileImageView: THTiledImageView
     let backgroundImageView: UIImageView
 
-    var dataSource: THTiledImageViewDataSource?
-
     init(tileImageView: THTiledImageView, dataSource: THTiledImageViewDataSource) {
         self.tileImageView = tileImageView
         self.backgroundImageView = UIImageView(frame: tileImageView.bounds)

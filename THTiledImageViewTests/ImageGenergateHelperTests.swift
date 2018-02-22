@@ -13,10 +13,28 @@ class ImageGenergateHelperTests: XCTestCase {
 
     var imageExist: Bool = false
 
-    func testDirectoryExists1() {
+    let randomString = NSUUID().uuidString
+
+    override func tearDown() {
+        // remove created directory for testing
         let cachesPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0] as String
 
-        let randomString = NSUUID().uuidString
+        let dirPath = "\(cachesPath)/\(randomString)"
+        let benchPath = "\(cachesPath)/bench"
+
+        do {
+            try FileManager.default.removeItem(atPath: dirPath)
+            try FileManager.default.removeItem(atPath: benchPath)
+        } catch let err {
+            print(err)
+        }
+
+        super.tearDown()
+    }
+
+    func testDirectoryExists() {
+        let cachesPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0] as String
+
         let dirPath = "\(cachesPath)/\(randomString)"
 
         FileManager.createContainerDirectory(path: dirPath)
