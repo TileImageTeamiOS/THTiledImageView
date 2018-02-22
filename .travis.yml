@@ -16,7 +16,7 @@ script:
   - git submodule update --init
   - xcodebuild -version
   - xcodebuild -showsdks
-  - xcodebuild -workspace THTiledImageView.xcworkspace -scheme THTiledImageView -configuration Debug -destination "platform=iOS Simulator,name=iPhone 10,OS=11.2" -sdk iphonesimulator -enableCodeCoverage YES ONLY_ACTIVE_ARCH=NO
+  - xcodebuild -workspace THTiledImageView.xcworkspace -scheme THTiledImageView -configuration Debug -destination "OS=11.2,name=iPhone 8" -sdk iphonesimulator -enableCodeCoverage YES ONLY_ACTIVE_ARCH=NO test
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'THTiledImageView' -X xcodeplist
