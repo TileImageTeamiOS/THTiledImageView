@@ -14,4 +14,4 @@ script:
 - xcodebuild -workspace THTiledImageView.xcworkspace -scheme THTiledImageView -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -J 'THTiledImageView'
