@@ -15,7 +15,9 @@ before_install:
   - brew update
 
 script:
-  - xcodebuild -workspace THTiledImageView.xcworkspace -scheme THTiledImageView -configuration Debug -enableCodeCoverage YES -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO build test
+  - xcodebuild clean build test -workspace THTiledImageView.xcworkspace -scheme THTiledImageView -configuration Debug -destination "platform=iOS Simulator,name=iPhone 10,OS=11.2" -enableCodeCoverage YES -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO 
+
+-destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3'
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'THTiledImageView' -X xcodeplist
