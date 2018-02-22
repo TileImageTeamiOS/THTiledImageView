@@ -15,6 +15,7 @@
 		7E0C4F9D1FF73CAB00778CED /* THTiledImageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9C1FF73CAB00778CED /* THTiledImageContentView.swift */; };
 		7E0C4F9F1FF73F5100778CED /* MyTileImageViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */; };
 		7E10AFEC203179C000263B91 /* THTiledImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E10AFEB203179C000263B91 /* THTiledImageViewTests.swift */; };
+		7E116FB7203DB940003FC907 /* THTiledImageScrollViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E116FB6203DB940003FC907 /* THTiledImageScrollViewTests.swift */; };
 		7E95FEC6200361E200580A13 /* THTiledImageGenerateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E95FEC5200361E200580A13 /* THTiledImageGenerateHelper.swift */; };
 		7EC640801FFC994400B1D7F1 /* windingRoad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EC6407F1FFC994400B1D7F1 /* windingRoad.jpg */; };
 		7EC640841FFCB2AB00B1D7F1 /* smallBench.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EC640831FFCB2AB00B1D7F1 /* smallBench.jpg */; };
@@ -54,6 +55,7 @@
 		7E10AFE9203179BF00263B91 /* THTiledImageViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = THTiledImageViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E10AFEB203179C000263B91 /* THTiledImageViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTiledImageViewTests.swift; sourceTree = "<group>"; };
 		7E10AFED203179C000263B91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E116FB6203DB940003FC907 /* THTiledImageScrollViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTiledImageScrollViewTests.swift; sourceTree = "<group>"; };
 		7E95FEC5200361E200580A13 /* THTiledImageGenerateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTiledImageGenerateHelper.swift; sourceTree = "<group>"; };
 		7E95FEC72003638100580A13 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7EC6407F1FFC994400B1D7F1 /* windingRoad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = windingRoad.jpg; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				7E10AFEB203179C000263B91 /* THTiledImageViewTests.swift */,
+				7E116FB6203DB940003FC907 /* THTiledImageScrollViewTests.swift */,
 				7E10AFED203179C000263B91 /* Info.plist */,
 			);
 			path = THTiledImageViewTests;
@@ -374,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E116FB7203DB940003FC907 /* THTiledImageScrollViewTests.swift in Sources */,
 				7E10AFEC203179C000263B91 /* THTiledImageViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

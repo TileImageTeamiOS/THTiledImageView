@@ -3,6 +3,7 @@ osx_image: xcode9.2
 xcode_project: THTiledImageView.xcodeproj
 xcode_scheme: THTiledImageView
 xcode_sdk: iphonesimulator11.2
+sudo: required
 
 env:
   - LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8
@@ -11,7 +12,11 @@ before_install:
   - brew update
 
 script:
-- xcodebuild -workspace THTiledImageView.xcworkspace -scheme THTiledImageView -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - set -o pipefail
+  - git submodule update --init
+  - xcodebuild -version
+  - xcodebuild -showsdks
+  - xcodebuild -workspace THTiledImageView.xcworkspace -scheme THTiledImageView -configuration Debug -destination "OS=11.2,name=iPhone 8" -sdk iphonesimulator -enableCodeCoverage YES ONLY_ACTIVE_ARCH=NO test
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -J 'THTiledImageView' -X xcodeplist

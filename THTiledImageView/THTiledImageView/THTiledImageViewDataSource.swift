@@ -57,7 +57,7 @@ extension THTiledImageViewDataSource {
 
     func requestBackgroundImage(completionHandler: @escaping (UIImage?) -> Void) {
         guard let url = self.backgroundImageURL else {
-            fatalError("You need to set backgroundImage URL")
+            return
         }
 
         let session = URLSession(configuration: .default)
