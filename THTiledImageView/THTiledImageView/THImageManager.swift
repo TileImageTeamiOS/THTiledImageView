@@ -18,12 +18,13 @@ class THImageDownloadManager {
     func downloadEachTiles(path url: URL, completion: @escaping THImageDownloaderCompletion) {
         ImageDownloader.default.downloadImage(with: url, retrieveImageTask: nil,
                                               options: [], progressBlock: nil) { (image, error, url, _) in
-                if let error = error {
-                    print(error)
-                    return
-                }
-                guard let image = image, let url = url else { return }
-                completion(image, url)
+                                                if let _ = error {
+                                                    // print(error)
+                                                    completion(UIImage(), url!)
+                                                    return
+                                                }
+                                                guard let image = image, let url = url else { return }
+                                                completion(image, url)
         }
     }
 }

@@ -17,6 +17,8 @@ class MyTileImageViewDataSource: THTiledImageViewDataSource {
 
     var tileSize: [CGSize]
 
+    var scrollViewSize: CGSize?
+
     var thumbnailImageName: String = ""
     var originalImageSize: CGSize
 

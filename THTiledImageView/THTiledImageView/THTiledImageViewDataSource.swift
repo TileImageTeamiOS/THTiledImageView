@@ -17,6 +17,8 @@ public protocol THTiledImageViewDataSource: class {
 
     var delegate: THTiledImageScrollViewDelegate? { get set }
 
+    var scrollViewSize: CGSize? { get set }
+
     // full Image size
     var originalImageSize: CGSize { get set }
 
@@ -80,9 +82,12 @@ extension THTiledImageViewDataSource {
         dataTask.resume()
     }
 
-    func setBackgroundImage(url: URL) {
+    public func setBackgroundImage(url: URL) {
         if let image = UIImage(contentsOfFile: url.path) {
             self.backgroundImage = image
         }
+    }
+    public func setBackgroundImage(image: UIImage) {
+        self.backgroundImage = image
     }
 }
