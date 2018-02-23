@@ -11,8 +11,9 @@
 ## Feature
 
 - [x] 🖼 `THTiledImageView` fully support `UIScrollView`. You can subclass it and use it.
-- [x] 🔪 Support Image Cutting Extension Method to generate tiled images.
+- [x] 📡 Support Async Image Downloading & Caching.
 - [x] 🔍 You can set different tiled images based on user's zoom scale.
+- [x] 🔪 Support Image Cutting Extension Method to generate tiled images.
 
 ## Demo
 
@@ -25,56 +26,86 @@
 To integrate `THTiledImageView` into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```
+pod "Kingfisher"
 pod "THTiledImageView"
 ```
 
 ## Requirements
 
-`THTiledImageView` is written in Swift 4, and compatible with iOS 9.0+
+`THTiledImageView` is written in Swift 4, and compatible with iOS 9.0+. We use [Kingfisher](https://github.com/onevcat/Kingfisher) library for image downloading and caching. So you need to install `Kingfisher` also to use `THTiledImageView`.
 
 ## How to use
 
-### SubClassing
+### SubClassing UIScrollView & Set DataSource
 
 1. `THTiledImageScrollView` is subclass of UIScrollVIew. Create `THTiledImageScrollView` from Storyboard or programmatically.
 
+```Swift
+class ViewController: UIViewController {
+    @IBOutlet weak var tileImageScrollView: THTiledImageScrollView!
+}
+```
 
 2. Create dataSource class that is subclass of `THTiledImageViewDataSource`.
 
 ```Swift
-var dataSource: THTiledImageViewDataSource?
-```
+class ViewController: UIViewController {
+    @IBOutlet weak var tileImageScrollView: THTiledImageScrollView!
 
+    var dataSource: THTiledImageViewDataSource?
+}
+```
 
 3. Here is `THTiledImageViewDataSource` options that you can use.
 
 ```Swift
-func setupExample(imageSize: CGSize, tileSize: [CGSize], imageURL: URL) {
+func setupExample(tileImageBaseURL: URL, imageSize: CGSize, tileSize: [CGSize], thumbnail: URL) {
 
-    if let dataSource = MyTileImageViewDataSource(imageSize: imageSize, tileSize: tileSize, imageURL: imageURL) {
-        dataSource.thumbnailImageName = "bench"
+    dataSource = MyTileImageViewDataSource(tileImageBaseURL: tileImageBaseURL, imageSize: imageSize, tileSize: tileSize)
 
-        // maximun tile level
-        // When you zoom in this level, you can see level 5 tiles.
-        dataSource.maxTileLevel = 5
+    guard let dataSource = dataSource else { return }
 
-        // minimum tile level
-        dataSource.minTileLevel = 1
+    dataSource.thumbnailImageName = "bench"
 
-        // scrollView allowable maximum zoom level
-        dataSource.maxZoomLevel = 8
+    // User can see this level of tiles when they zoom in the image
+    dataSource.maxTileLevel = 3
 
-        dataSource.imageExtension = "jpg"
-        tileImageScrollView.set(dataSource: dataSource)
+    // User can see this level of tiles when they zoom out the image
+    dataSource.minTileLevel = 1
 
-        dataSource.requestBackgroundImage { _ in
-            // do something after image shows.
-        }
-    }
+    // Allowable maximum level of scrollView zoom
+    dataSource.maxZoomLevel = 8
+
+    dataSource.imageExtension = "jpg"
+
+    // Local Image For Background
+    dataSource.setBackgroundImage(url: thumbnail)
+
+    // Remote Image For Background
+    dataSource.backgroundImageURL = URL(string: "https://dl.dropbox.com/s/g1oomszqsnc5eue/smallBench.jpg")!
+    dataSource.requestBackgroundImage { _ in }
+
+    // size of scrollView Frame
+    dataSource.scrollViewSize = setScrollViewSize()
+
+    tileImageScrollView.set(dataSource: dataSource)
 }
 ```
 
-For more detail, take a look at our example in the project.
+### Async Image Downloading & Caching
+
+From Version 0.3.0, We support setting tile image from remote server.
+
+1. Set the base URL that you want to download image, and set the `accessFromServer` option to `true`.
+
+```Swift
+dataSource.tileImageBaseURL = URL(string: "http://127.0.0.1:5000/bench")
+dataSource.accessFromServer = true
+```
+
+Take a look at our [image path rules](#### Tiled Images path) to use downloading.
+
+So generate image by using our methods and upload those images to server first, and use it.
 
 ### Zoom and Tile Level
 
@@ -145,6 +176,3 @@ See our example for more details.
 ## License
 
 `THTiledImageView` is released under the MIT license. [See LICENSE](https://github.com/TileImageTeamiOS/THTiledImageView/blob/master/LICENSE) for details.
-
-
-![](https://travis-ci.org/hcn1519 / THTiledImageView.svg?branch=master)
