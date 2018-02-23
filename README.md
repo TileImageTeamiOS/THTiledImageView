@@ -99,11 +99,11 @@ From Version 0.3.0, We support setting tile image from remote server.
 1. Set the base URL that you want to download image, and set the `accessFromServer` option to `true`.
 
 ```Swift
-dataSource.tileImageBaseURL = URL(string: "http://127.0.0.1:5000/bench")
+dataSource.tileImageBaseURL = URL(string: "http://127.0.0.1:5000")
 dataSource.accessFromServer = true
 ```
 
-Take a look at our [image path rules](#### Tiled Images path) to use downloading.
+Take a look at our [image path rules](https://github.com/TileImageTeamiOS/THTiledImageView/tree/update-readme#tiled-images-path) to use downloading.
 
 So generate image by using our methods and upload those images to server first, and use it.
 
@@ -130,7 +130,7 @@ Tile level 5(or more than 1) can be used narrow range of image.
 
 ### Cutting Image
 
-> ❗️ So far cutting and rendering images cannot be done simultaneously. You should cut an image first(from another viewController), and render the image.
+> ❗️ Cutting and rendering images cannot be done simultaneously. You should cut images first(from another viewController), and render the image.
 
 We offer you image cutting function(`UIImage.saveTileOf(size:name:withExtension:)`. Specify the size of tiles by levels.
 
@@ -158,7 +158,17 @@ Path Rules ./imageName/imageSize/{imageName_imageSize_level_x_y}.jpg
 Example    ./bench/256/bench_256_1_0_0.jpg
 ```
 
-> ❗️ If you create images on your own, you need to obey the path rules.
+> ❗️ If you create images on your own, you need to obey the path rules to use `THTileImageView`.
+
+#### Tiled Images path For Server
+
+1. Put tiles on your server. path of image should looks like this.
+
+```
+http://127.0.0.1:5000/bench/256/bench_256_1_0_0.jpg
+```
+
+All you need to do is go to the cache directory and take out and put that directory to your server.
 
 ### THTiledImageScrollViewDelegate
 
