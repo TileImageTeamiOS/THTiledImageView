@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var tileImageScrollView: THTiledImageScrollView!
+
     var dataSource: THTiledImageViewDataSource?
 
     override func viewDidLoad() {
@@ -54,10 +55,30 @@ class ViewController: UIViewController {
         // Local Image For Background
         dataSource.setBackgroundImage(url: thumbnail)
 
+        dataSource.scrollViewSize = setScrollViewSize()
         // Remote Image For Background
 //        dataSource.backgroundImageURL = URL(string: "https://dl.dropbox.com/s/g1oomszqsnc5eue/smallBench.jpg")!
 //        dataSource.requestBackgroundImage { _ in }
 
         tileImageScrollView.set(dataSource: dataSource)
+    }
+
+    func setScrollViewSize() -> CGSize {
+        var height = UIApplication.shared.statusBarFrame.height
+        if let navCon = self.navigationController {
+            height += navCon.navigationBar.frame.size.height
+        }
+
+        var scrollViewSize = CGSize(width: self.view.frame.size.width,
+                                    height: self.view.frame.size.height - height)
+
+        if #available(iOS 11.0, *) {
+            let window = UIApplication.shared.keyWindow
+            if let bottomPadding = window?.safeAreaInsets.bottom {
+                scrollViewSize.height -= bottomPadding
+            }
+        }
+
+        return scrollViewSize
     }
 }

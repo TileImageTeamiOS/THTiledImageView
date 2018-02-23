@@ -17,6 +17,8 @@ public protocol THTiledImageViewDataSource: class {
 
     var delegate: THTiledImageScrollViewDelegate? { get set }
 
+    var scrollViewSize: CGSize? { get set }
+
     // full Image size
     var originalImageSize: CGSize { get set }
 
