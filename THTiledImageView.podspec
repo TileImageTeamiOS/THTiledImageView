@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'THTiledImageView'
-  s.version          = '0.3'
+  s.version          = '0.3.1'
   s.summary          = 'High Quality Image ScrollView using cropped tiled images.'
 
   s.description      = <<-DESC

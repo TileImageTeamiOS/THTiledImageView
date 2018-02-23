@@ -79,8 +79,6 @@ class ViewController: UIViewController {
                 }
             }
         }
-        
-        print(scrollViewSize)
         return scrollViewSize
     }
 }

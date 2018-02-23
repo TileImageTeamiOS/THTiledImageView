@@ -73,7 +73,7 @@ extension THTiledImageViewDataSource {
             case 200:
                 if let data = data, let image = UIImage(data: data) {
                     self.backgroundImage = image
-                    completionHandler(self.backgroundImage)
+                    completionHandler(image)
                 }
             default:
                 completionHandler(nil)

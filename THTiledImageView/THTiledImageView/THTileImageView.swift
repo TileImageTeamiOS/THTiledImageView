@@ -143,11 +143,16 @@ class THTiledImageView: UIView {
         if requestDict[imageKey] == nil {
             requestDict.updateValue(true, forKey: imageKey)
 
-            THImageDownloadManager.default.downloadEachTiles(path: downloadPath) { image, _ in
-                THImageCacheManager.default.cacheTiles(image: image, imageIdentifier: imageKey) {
-                    let tile = THTile(tileImage: image, tileRect: tileRect)
-                    self.layer.setNeedsDisplay(tile.tileRect)
+            THImageDownloadManager.default.downloadEachTiles(path: downloadPath) { image, _, error in
+                if let error = error {
+                    print(error)
+                }
+                if let image = image {
+                    THImageCacheManager.default.cacheTiles(image: image, imageIdentifier: imageKey) {
+                        let tile = THTile(tileImage: image, tileRect: tileRect)
+                        self.layer.setNeedsDisplay(tile.tileRect)
 
+                    }
                 }
             }
         }

@@ -14,6 +14,9 @@
 		7E0C4F9B1FF7357D00778CED /* THTileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9A1FF7357D00778CED /* THTileImageView.swift */; };
 		7E0C4F9D1FF73CAB00778CED /* THTiledImageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9C1FF73CAB00778CED /* THTiledImageContentView.swift */; };
 		7E0C4F9F1FF73F5100778CED /* MyTileImageViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */; };
+		7E0CF80D203EDD7C005B503C /* ImageGenergateHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CF80C203EDD7C005B503C /* ImageGenergateHelperTests.swift */; };
+		7E0CF80F203EEBD2005B503C /* ImageManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CF80E203EEBD2005B503C /* ImageManagerTest.swift */; };
+		7E0CF811203F01EE005B503C /* THTileImageContentViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0CF810203F01EE005B503C /* THTileImageContentViewTests.swift */; };
 		7E10AFEC203179C000263B91 /* THTiledImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E10AFEB203179C000263B91 /* THTiledImageViewTests.swift */; };
 		7E116FB7203DB940003FC907 /* THTiledImageScrollViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E116FB6203DB940003FC907 /* THTiledImageScrollViewTests.swift */; };
 		7E95FEC6200361E200580A13 /* THTiledImageGenerateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E95FEC5200361E200580A13 /* THTiledImageGenerateHelper.swift */; };
@@ -52,6 +55,9 @@
 		7E0C4F9A1FF7357D00778CED /* THTileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTileImageView.swift; sourceTree = "<group>"; };
 		7E0C4F9C1FF73CAB00778CED /* THTiledImageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTiledImageContentView.swift; sourceTree = "<group>"; };
 		7E0C4F9E1FF73F5100778CED /* MyTileImageViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTileImageViewDataSource.swift; sourceTree = "<group>"; };
+		7E0CF80C203EDD7C005B503C /* ImageGenergateHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGenergateHelperTests.swift; sourceTree = "<group>"; };
+		7E0CF80E203EEBD2005B503C /* ImageManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManagerTest.swift; sourceTree = "<group>"; };
+		7E0CF810203F01EE005B503C /* THTileImageContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTileImageContentViewTests.swift; sourceTree = "<group>"; };
 		7E10AFE9203179BF00263B91 /* THTiledImageViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = THTiledImageViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E10AFEB203179C000263B91 /* THTiledImageViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTiledImageViewTests.swift; sourceTree = "<group>"; };
 		7E10AFED203179C000263B91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,6 +132,9 @@
 			children = (
 				7E10AFEB203179C000263B91 /* THTiledImageViewTests.swift */,
 				7E116FB6203DB940003FC907 /* THTiledImageScrollViewTests.swift */,
+				7E0CF80C203EDD7C005B503C /* ImageGenergateHelperTests.swift */,
+				7E0CF810203F01EE005B503C /* THTileImageContentViewTests.swift */,
+				7E0CF80E203EEBD2005B503C /* ImageManagerTest.swift */,
 				7E10AFED203179C000263B91 /* Info.plist */,
 			);
 			path = THTiledImageViewTests;
@@ -378,7 +387,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E116FB7203DB940003FC907 /* THTiledImageScrollViewTests.swift in Sources */,
+				7E0CF80D203EDD7C005B503C /* ImageGenergateHelperTests.swift in Sources */,
 				7E10AFEC203179C000263B91 /* THTiledImageViewTests.swift in Sources */,
+				7E0CF80F203EEBD2005B503C /* ImageManagerTest.swift in Sources */,
+				7E0CF811203F01EE005B503C /* THTileImageContentViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
