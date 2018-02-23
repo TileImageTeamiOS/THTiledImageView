@@ -80,9 +80,12 @@ extension THTiledImageViewDataSource {
         dataTask.resume()
     }
 
-    func setBackgroundImage(url: URL) {
+    public func setBackgroundImage(url: URL) {
         if let image = UIImage(contentsOfFile: url.path) {
             self.backgroundImage = image
         }
+    }
+    public func setBackgroundImage(image: UIImage) {
+        self.backgroundImage = image
     }
 }
