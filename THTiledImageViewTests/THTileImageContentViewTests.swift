@@ -68,4 +68,3 @@ class THTileImageContentViewTests: XCTestCase {
 //    self.addSubview(backgroundImageView)
 //    self.addSubview(tileImageView)
 //}
-

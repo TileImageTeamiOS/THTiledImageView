@@ -24,15 +24,16 @@ open class THTiledImageScrollView: UIScrollView {
 
     public func set(dataSource: THTiledImageViewDataSource) {
         delegate = self
+        self.tileImageScrollViewDelegate = dataSource.delegate
 
+        // set doubleTapp
         doubleTap = UITapGestureRecognizer(target: self, action: #selector(THTiledImageScrollView.didDoubleTapped(_:)))
         doubleTap.numberOfTapsRequired = 2
         addGestureRecognizer(doubleTap)
 
         self.dataSource = dataSource
 
-        self.tileImageScrollViewDelegate = dataSource.delegate
-
+        // set subView
         let tileImageView = THTiledImageView(dataSource: dataSource)
         tileImageView.dataSource = dataSource
 
@@ -41,8 +42,13 @@ open class THTiledImageScrollView: UIScrollView {
             self.addSubview(contentView)
         }
 
-        currentBounds = bounds.size
+        // set contentSize & frame
         self.contentSize = dataSource.contentSize
+
+        if let scrollViewSize = dataSource.scrollViewSize {
+            currentBounds = scrollViewSize
+            frame.size = currentBounds
+        }
 
         setMaxMinZoomScalesForCurrentBounds()
         setZoomScale(minimumZoomScale, animated: false)
@@ -52,33 +58,11 @@ open class THTiledImageScrollView: UIScrollView {
 
     // MARK: Set content TopX and TopY for contentView
     private func setContentInset() {
-        let horizontalSpace = max(-(contentSize.width - bounds.width)/2, 0)
-        let verticalSpace = max(-(contentSize.height - bounds.height)/2, 0)
-
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-
-        self.contentInset = UIEdgeInsets(top: verticalSpace - (statusBarHeight / 2), left: horizontalSpace,
-                                         bottom: verticalSpace - (statusBarHeight / 2), right: horizontalSpace)
-
-        if UIDevice.current.isiPhoneX {
-            contentInset.top -= 17
-            contentInset.bottom -= 17
-        }
-
-        if bounds.origin.y != 0 {
-            bounds.origin.y = 0
-        }
-
-        if bounds.origin.x != 0 {
-            bounds.origin.x = 0
-        }
-
-        if let viewController = self.superview?.getParentViewController() {
-            if let navHeight = viewController.navigationController?.navigationBar.frame.height {
-                contentInset.top -= navHeight / 2
-                contentInset.bottom -= navHeight / 2
-            }
-        }
+        let marginX = (bounds.width - contentSize.width) / 2
+        let marginY = (bounds.height - contentSize.height) / 2
+        let topX = max(marginX, 0)
+        let topY = max(marginY, 0)
+        self.contentInset = UIEdgeInsets(top: topY, left: topX, bottom: topY, right: topX)
     }
 
     // Scale contentSize
@@ -86,8 +70,6 @@ open class THTiledImageScrollView: UIScrollView {
         guard let dataSource = dataSource else {
             return
         }
-        setNeedsLayout()
-        layoutIfNeeded()
 
         let boundsSize = bounds.size
         let imageSize = dataSource.contentSize
@@ -167,7 +149,7 @@ extension UIDevice {
     var isiPhoneX: Bool {
         if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.phone &&
             (UIScreen.main.bounds.size.height == 812 &&
-              UIScreen.main.bounds.size.width == 375) {
+                UIScreen.main.bounds.size.width == 375) {
             return true
         }
         return false

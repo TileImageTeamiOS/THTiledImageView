@@ -14,5 +14,4 @@ class THTiledImageViewTests: XCTestCase {
     override func setUp() {
         super.setUp()
     }
-
 }

@@ -35,7 +35,7 @@ class THTiledImageContentView: UIView {
         }
         self.addSubview(backgroundImageView)
         self.addSubview(tileImageView)
-    }
+   }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
