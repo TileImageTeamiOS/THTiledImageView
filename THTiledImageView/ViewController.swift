@@ -73,12 +73,14 @@ class ViewController: UIViewController {
                                     height: self.view.frame.size.height - height)
 
         if #available(iOS 11.0, *) {
-            let window = UIApplication.shared.keyWindow
-            if let bottomPadding = window?.safeAreaInsets.bottom {
-                scrollViewSize.height -= bottomPadding
+            if let window = UIApplication.shared.delegate?.window {
+                if let bottomPadding = window?.safeAreaInsets.bottom {
+                    scrollViewSize.height -= bottomPadding
+                }
             }
         }
-
+        
+        print(scrollViewSize)
         return scrollViewSize
     }
 }
