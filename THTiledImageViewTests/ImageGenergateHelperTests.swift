@@ -71,6 +71,26 @@ class ImageGenergateHelperTests: XCTestCase {
         } else {
             XCTAssert(false, "The call to cut image into another error")
         }
+    }
 
+    func testCuttingSpecificLevelImages() {
+        UIImage.saveTileOf(size: 128, level: 3, name: "bench", withExtension: "jpg", imageForCut: UIImage(named: "bench.jpg")!, largestImage: UIImage(named: "smallBench.jpg")!) { _ in
+            let cachesPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0] as String
+
+            let path = "\(cachesPath)/bench/128/" + "bench_128_3_0_0.jpg"
+            if FileManager.default.fileExists(atPath: path) {
+                self.imageExist = true
+            }
+        }
+
+        let pred = NSPredicate(format: "imageExist == true")
+        let exp = expectation(for: pred, evaluatedWith: self, handler: nil)
+        let result = XCTWaiter.wait(for: [exp], timeout: 10.0)
+
+        if result == XCTWaiter.Result.completed {
+            XCTAssert(imageExist, "The call to get the url into another error")
+        } else {
+            XCTAssert(false, "The call to cut image into another error")
+        }
     }
 }

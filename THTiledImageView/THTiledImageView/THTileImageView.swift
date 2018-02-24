@@ -83,9 +83,6 @@ class THTiledImageView: UIView {
         let firstRow = Int(rect.minY / length)
         let lastRow = Int(rect.maxY / length)
 
-//        print("maxRow", lastRow)
-//        print("maxCol", lastColumn)
-
         for row in firstRow...lastRow {
             for column in firstColumn...lastColumn {
 
