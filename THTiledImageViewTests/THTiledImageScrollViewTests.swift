@@ -35,7 +35,7 @@ class THTiledImageScrollViewTests: XCTestCase {
 
         let pred = NSPredicate(format: "backgroundImage != nil")
         let exp = expectation(for: pred, evaluatedWith: self, handler: nil)
-        let result = XCTWaiter.wait(for: [exp], timeout: 5.0)
+        let result = XCTWaiter.wait(for: [exp], timeout: 7.0)
 
         let messages = ["The call to request background image has error", "The call to request background image into another error"]
 
@@ -82,10 +82,7 @@ class THTiledImageScrollViewTests: XCTestCase {
         scrollView.zoomScale = 1
         scrollView.maximumZoomScale = 2
 
-        let newScale = min(scrollView.zoomScale * 2, scrollView.maximumZoomScale)
         scrollView.didDoubleTapped(scrollView.doubleTap)
-
-//        XCTAssert(scrollView.zoomScale == newScale, "ScrollView Zoom Double Tap test fails")
     }
 
     func testScrollViewContentSize() {

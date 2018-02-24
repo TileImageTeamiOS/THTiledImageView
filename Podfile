@@ -8,3 +8,8 @@ target 'THTiledImageView' do
   # Pods for THTiledImageView
   pod 'Kingfisher'
 end
+
+target 'THTiledImageViewTests' do
+  use_frameworks!
+  pod 'Kingfisher'
+end

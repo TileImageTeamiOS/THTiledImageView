@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E883ACD811613F7F229F695FCD45E483"
-               BuildableName = "Pods_THTiledImageView.framework"
-               BlueprintName = "Pods-THTiledImageView"
+               BlueprintIdentifier = "0B170CC84ADE75B6B6BB175D93F487C9"
+               BuildableName = "Kingfisher.framework"
+               BlueprintName = "Kingfisher-iOS11.0"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E883ACD811613F7F229F695FCD45E483"
-            BuildableName = "Pods_THTiledImageView.framework"
-            BlueprintName = "Pods-THTiledImageView"
+            BlueprintIdentifier = "0B170CC84ADE75B6B6BB175D93F487C9"
+            BuildableName = "Kingfisher.framework"
+            BlueprintName = "Kingfisher-iOS11.0"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

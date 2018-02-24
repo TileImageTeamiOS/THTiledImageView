@@ -32,6 +32,7 @@
 		7EF71CEF1FF4C58B001C3EF2 /* THTiledImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF71CEE1FF4C58B001C3EF2 /* THTiledImageScrollView.swift */; };
 		7EF71CF11FF4C612001C3EF2 /* THTiledImageViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF71CF01FF4C612001C3EF2 /* THTiledImageViewDataSource.swift */; };
 		9A7281D899F183B5153DBD56 /* Pods_THTiledImageView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D337711A0310A9C1F8D4D79 /* Pods_THTiledImageView.framework */; };
+		E68AC8C71775D5E95A5FF69E /* Pods_THTiledImageViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8342F978173C06B2DC3AE773 /* Pods_THTiledImageViewTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,9 @@
 		7EF71CE71FF4C13D001C3EF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EF71CEE1FF4C58B001C3EF2 /* THTiledImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTiledImageScrollView.swift; sourceTree = "<group>"; };
 		7EF71CF01FF4C612001C3EF2 /* THTiledImageViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = THTiledImageViewDataSource.swift; sourceTree = "<group>"; };
+		8342F978173C06B2DC3AE773 /* Pods_THTiledImageViewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_THTiledImageViewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E12BC05857F4FAD7DA74FC80 /* Pods-THTiledImageViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THTiledImageViewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-THTiledImageViewTests/Pods-THTiledImageViewTests.release.xcconfig"; sourceTree = "<group>"; };
+		FD44CF7DAF536249E12022E6 /* Pods-THTiledImageViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THTiledImageViewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-THTiledImageViewTests/Pods-THTiledImageViewTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E68AC8C71775D5E95A5FF69E /* Pods_THTiledImageViewTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +108,8 @@
 			children = (
 				1F83F5CF280E2F1AB662AD38 /* Pods-THTiledImageView.debug.xcconfig */,
 				2CBFF635114B23A86A2F71B7 /* Pods-THTiledImageView.release.xcconfig */,
+				FD44CF7DAF536249E12022E6 /* Pods-THTiledImageViewTests.debug.xcconfig */,
+				E12BC05857F4FAD7DA74FC80 /* Pods-THTiledImageViewTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -196,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				1D337711A0310A9C1F8D4D79 /* Pods_THTiledImageView.framework */,
+				8342F978173C06B2DC3AE773 /* Pods_THTiledImageViewTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -207,9 +215,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E10AFF0203179C000263B91 /* Build configuration list for PBXNativeTarget "THTiledImageViewTests" */;
 			buildPhases = (
+				9AF04DB8965F536C110E3626 /* [CP] Check Pods Manifest.lock */,
 				7E10AFE5203179BF00263B91 /* Sources */,
 				7E10AFE6203179BF00263B91 /* Frameworks */,
 				7E10AFE7203179BF00263B91 /* Resources */,
+				7A51260FB95A32629D478F8A /* [CP] Embed Pods Frameworks */,
+				22261DAD4A0844FDE320DAE0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -315,6 +326,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		22261DAD4A0844FDE320DAE0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-THTiledImageViewTests/Pods-THTiledImageViewTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4CAF827FB3818E2005320233 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -331,6 +357,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A51260FB95A32629D478F8A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-THTiledImageViewTests/Pods-THTiledImageViewTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher-iOS11.2/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-THTiledImageViewTests/Pods-THTiledImageViewTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7CB5F32B058D49B5373E1570 /* [CP] Copy Pods Resources */ = {
@@ -361,6 +405,24 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
+		9AF04DB8965F536C110E3626 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-THTiledImageViewTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D741B29CD151956F4E71555B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -368,7 +430,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-THTiledImageView/Pods-THTiledImageView-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher-iOS11.0/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -442,6 +504,7 @@
 /* Begin XCBuildConfiguration section */
 		7E10AFF1203179C000263B91 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD44CF7DAF536249E12022E6 /* Pods-THTiledImageViewTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -458,6 +521,7 @@
 		};
 		7E10AFF2203179C000263B91 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E12BC05857F4FAD7DA74FC80 /* Pods-THTiledImageViewTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

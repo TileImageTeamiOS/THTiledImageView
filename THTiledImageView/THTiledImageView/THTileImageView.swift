@@ -69,12 +69,15 @@ class THTiledImageView: UIView {
 
         var level: Int = 1
 
-        let context = UIGraphicsGetCurrentContext()!
-        let scaleX = context.ctm.a / UIScreen.main.scale
-
-        let x = round(log2(Double(scaleX)))
-
-        level = dataSource.maxTileLevel + Int(x)
+        if let context = UIGraphicsGetCurrentContext() {
+            let scaleX = context.ctm.a / UIScreen.main.scale
+            let x = round(log2(Double(scaleX)))
+            level = dataSource.maxTileLevel + Int(x)
+        } else {
+            let scaleX: CGFloat = 0.25
+            let x = round(log2(Double(scaleX)))
+            level = dataSource.maxTileLevel + Int(x)
+        }
 
         let length = tileSize[level - 1].width
 
