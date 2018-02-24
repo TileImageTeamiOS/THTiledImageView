@@ -11,8 +11,9 @@
 ## Feature
 
 - [x] 🖼 `THTiledImageView` fully support `UIScrollView`. You can subclass it and use it.
-- [x] 🔪 Support Image Cutting Extension Method to generate tiled images.
+- [x] 📡 Support Async Image Downloading & Caching.
 - [x] 🔍 You can set different tiled images based on user's zoom scale.
+- [x] 🔪 Support Image Cutting Extension Method to generate tiled images.
 
 ## Demo
 
@@ -22,59 +23,97 @@
 
 ### CocoaPods
 
-To integrate `THTiledImageView` into your Xcode project using CocoaPods, specify it in your Podfile:
+You can install the latest release version of CocoaPods with the following command
 
+```bash
+$ gem install cocoapods
 ```
+
+Simply add the following line to your Podfile:
+
+```ruby
+pod "Kingfisher"
 pod "THTiledImageView"
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
 ```
 
 ## Requirements
 
-`THTiledImageView` is written in Swift 4, and compatible with iOS 9.0+
+`THTiledImageView` is written in Swift 4, and compatible with iOS 9.0+. We use [Kingfisher](https://github.com/onevcat/Kingfisher) library for image downloading and caching. So you need to install `Kingfisher` also to use `THTiledImageView`.
 
 ## How to use
 
-### SubClassing
-
 1. `THTiledImageScrollView` is subclass of UIScrollVIew. Create `THTiledImageScrollView` from Storyboard or programmatically.
 
-
-2. Create dataSource class that is subclass of `THTiledImageViewDataSource`.
-
 ```Swift
-var dataSource: THTiledImageViewDataSource?
+class ViewController: UIViewController {
+    @IBOutlet weak var tileImageScrollView: THTiledImageScrollView!
+}
 ```
 
+2. Create dataSource class that conforms `THTiledImageViewDataSource`.
+
+```Swift
+class ViewController: UIViewController {
+    @IBOutlet weak var tileImageScrollView: THTiledImageScrollView!
+
+    var dataSource: THTiledImageViewDataSource?
+}
+```
 
 3. Here is `THTiledImageViewDataSource` options that you can use.
 
 ```Swift
-func setupExample(imageSize: CGSize, tileSize: [CGSize], imageURL: URL) {
+func setupExample(tileImageBaseURL: URL, imageSize: CGSize, tileSize: [CGSize], thumbnail: URL) {
 
-    if let dataSource = MyTileImageViewDataSource(imageSize: imageSize, tileSize: tileSize, imageURL: imageURL) {
-        dataSource.thumbnailImageName = "bench"
+    dataSource = MyTileImageViewDataSource(tileImageBaseURL: tileImageBaseURL, imageSize: imageSize, tileSize: tileSize)
 
-        // maximun tile level
-        // When you zoom in this level, you can see level 5 tiles.
-        dataSource.maxTileLevel = 5
+    guard let dataSource = dataSource else { return }
 
-        // minimum tile level
-        dataSource.minTileLevel = 1
+    dataSource.thumbnailImageName = "bench"
 
-        // scrollView allowable maximum zoom level
-        dataSource.maxZoomLevel = 8
+    // User can see this level of tiles when they zoom in the image
+    dataSource.maxTileLevel = 3
 
-        dataSource.imageExtension = "jpg"
-        tileImageScrollView.set(dataSource: dataSource)
+    // User can see this level of tiles when they zoom out the image
+    dataSource.minTileLevel = 1
 
-        dataSource.requestBackgroundImage { _ in
-            // do something after image shows.
-        }
-    }
+    // Allowable maximum level of scrollView zoom
+    dataSource.maxZoomLevel = 8
+
+    dataSource.imageExtension = "jpg"
+
+    // Local Image For Background
+    dataSource.setBackgroundImage(url: thumbnail)
+
+    // Remote Image For Background
+    dataSource.backgroundImageURL = URL(string: "Image URL goes here")
+    dataSource.requestBackgroundImage { _ in }
+
+    // size of scrollView Frame
+    dataSource.scrollViewSize = setScrollViewSize()
+
+    tileImageScrollView.set(dataSource: dataSource)
 }
 ```
 
-For more detail, take a look at our example in the project.
+### Async Image Downloading & Caching
+
+From Version 0.3.0, We support setting tile image from remote server.
+
+- Set the base URL that you want to download image, and set the `accessFromServer` option to `true`.
+
+```Swift
+dataSource.tileImageBaseURL = URL(string: "http://127.0.0.1:5000")
+dataSource.accessFromServer = true
+```
+
+- Put tiled images on your Server. Take a look at our [image path rules](https://github.com/TileImageTeamiOS/THTiledImageView/tree/update-readme#tiled-images-path) to use downloading.
 
 ### Zoom and Tile Level
 
@@ -99,7 +138,7 @@ Tile level 5(or more than 1) can be used narrow range of image.
 
 ### Cutting Image
 
-> ❗️ So far cutting and rendering images cannot be done simultaneously. You should cut an image first(from another viewController), and render the image.
+> ❗️ Cutting and rendering images cannot be done simultaneously. You should cut images first(from another viewController), and render the image.
 
 We offer you image cutting function(`UIImage.saveTileOf(size:name:withExtension:)`. Specify the size of tiles by levels.
 
@@ -127,7 +166,17 @@ Path Rules ./imageName/imageSize/{imageName_imageSize_level_x_y}.jpg
 Example    ./bench/256/bench_256_1_0_0.jpg
 ```
 
-> ❗️ If you create images on your own, you need to obey the path rules.
+> ❗️ If you create images on your own, you need to obey the path rules to use `THTileImageView`.
+
+#### Tiled Images path For Server
+
+1. Put tiles on your server. path of image should looks like this.
+
+```
+http://127.0.0.1:5000/bench/256/bench_256_1_0_0.jpg
+```
+
+All you need to do is go to the cache directory and take out and put that directory to your server.
 
 ### THTiledImageScrollViewDelegate
 
@@ -145,6 +194,3 @@ See our example for more details.
 ## License
 
 `THTiledImageView` is released under the MIT license. [See LICENSE](https://github.com/TileImageTeamiOS/THTiledImageView/blob/master/LICENSE) for details.
-
-
-![](https://travis-ci.org/hcn1519 / THTiledImageView.svg?branch=master)
