@@ -128,30 +128,3 @@ extension THTiledImageScrollView: DoubleTappable {
         return point
     }
 }
-
-// MARK: For Positioning ContentView to Center in ScrollView
-extension UIResponder {
-    func getParentViewController() -> UIViewController? {
-        if self.next is UIViewController {
-            return self.next as? UIViewController
-        } else {
-            if let n = self.next {
-                return n.getParentViewController()
-            } else {
-                return nil
-            }
-        }
-    }
-}
-
-// MARK: For iPhoneX Detection
-extension UIDevice {
-    var isiPhoneX: Bool {
-        if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.phone &&
-            (UIScreen.main.bounds.size.height == 812 &&
-                UIScreen.main.bounds.size.width == 375) {
-            return true
-        }
-        return false
-    }
-}
