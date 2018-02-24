@@ -74,12 +74,10 @@ class ImageGenergateHelperTests: XCTestCase {
     }
 
     func testCuttingSpecificLevelImages() {
-        let tile = CGSize(width: 1024, height: 1024)
-
-        UIImage.saveTileOf(size: tile, level: 3, name: "bench", withExtension: "jpg") { _ in
+        UIImage.saveTileOf(size: 128, level: 3, name: "bench", withExtension: "jpg", imageForCut: UIImage(named: "bench.jpg")!, largestImage: UIImage(named: "smallBench.jpg")!) { _ in
             let cachesPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0] as String
 
-            let path = "\(cachesPath)/bench/1024/" + "bench_1024_3_0_0.jpg"
+            let path = "\(cachesPath)/bench/128/" + "bench_128_3_0_0.jpg"
             if FileManager.default.fileExists(atPath: path) {
                 self.imageExist = true
             }
