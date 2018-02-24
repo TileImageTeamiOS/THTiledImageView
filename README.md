@@ -23,11 +23,23 @@
 
 ### CocoaPods
 
-To integrate `THTiledImageView` into your Xcode project using CocoaPods, specify it in your Podfile:
+You can install the latest release version of CocoaPods with the following command
 
+```bash
+$ gem install cocoapods
 ```
+
+Simply add the following line to your Podfile:
+
+```ruby
 pod "Kingfisher"
 pod "THTiledImageView"
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
 ```
 
 ## Requirements
@@ -35,8 +47,6 @@ pod "THTiledImageView"
 `THTiledImageView` is written in Swift 4, and compatible with iOS 9.0+. We use [Kingfisher](https://github.com/onevcat/Kingfisher) library for image downloading and caching. So you need to install `Kingfisher` also to use `THTiledImageView`.
 
 ## How to use
-
-### SubClassing UIScrollView & Set DataSource
 
 1. `THTiledImageScrollView` is subclass of UIScrollVIew. Create `THTiledImageScrollView` from Storyboard or programmatically.
 
@@ -46,7 +56,7 @@ class ViewController: UIViewController {
 }
 ```
 
-2. Create dataSource class that is subclass of `THTiledImageViewDataSource`.
+2. Create dataSource class that conforms `THTiledImageViewDataSource`.
 
 ```Swift
 class ViewController: UIViewController {
@@ -82,7 +92,7 @@ func setupExample(tileImageBaseURL: URL, imageSize: CGSize, tileSize: [CGSize], 
     dataSource.setBackgroundImage(url: thumbnail)
 
     // Remote Image For Background
-    dataSource.backgroundImageURL = URL(string: "https://dl.dropbox.com/s/g1oomszqsnc5eue/smallBench.jpg")!
+    dataSource.backgroundImageURL = URL(string: "Image URL goes here")
     dataSource.requestBackgroundImage { _ in }
 
     // size of scrollView Frame
@@ -96,16 +106,14 @@ func setupExample(tileImageBaseURL: URL, imageSize: CGSize, tileSize: [CGSize], 
 
 From Version 0.3.0, We support setting tile image from remote server.
 
-1. Set the base URL that you want to download image, and set the `accessFromServer` option to `true`.
+- Set the base URL that you want to download image, and set the `accessFromServer` option to `true`.
 
 ```Swift
 dataSource.tileImageBaseURL = URL(string: "http://127.0.0.1:5000")
 dataSource.accessFromServer = true
 ```
 
-Take a look at our [image path rules](https://github.com/TileImageTeamiOS/THTiledImageView/tree/update-readme#tiled-images-path) to use downloading.
-
-So generate image by using our methods and upload those images to server first, and use it.
+- Put tiled images on your Server. Take a look at our [image path rules](https://github.com/TileImageTeamiOS/THTiledImageView/tree/update-readme#tiled-images-path) to use downloading.
 
 ### Zoom and Tile Level
 

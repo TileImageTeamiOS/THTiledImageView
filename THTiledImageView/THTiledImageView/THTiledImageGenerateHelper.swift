@@ -24,6 +24,75 @@ extension FileManager {
 }
 
 extension UIImage {
+    public class func saveTileOf(size: CGSize, level: Int, name: String, withExtension: String, completion: @escaping (Bool) -> Void) {
+        let cachesPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0] as String
+
+        let imageNameDirectoryPath = "\(cachesPath)/\(name)"
+
+        print("Your Image file will be saved at : \(imageNameDirectoryPath)")
+
+        FileManager.createContainerDirectory(path: imageNameDirectoryPath)
+
+        let imageSizeDirectoryPath = "\(imageNameDirectoryPath)/\(Int(size.width))"
+
+        // check file already exists
+        let checkPath = "\(imageSizeDirectoryPath)/" +
+            "\(name)_\(Int(size.width))" +
+        "_\(level)_0_0.\(withExtension)"
+
+        let fileExists = FileManager.default.fileExists(atPath: checkPath)
+
+        if fileExists == false {
+            FileManager.createContainerDirectory(path: imageSizeDirectoryPath)
+
+            var tileSize = size
+            let defaultTileSizeWidth = tileSize.width
+            let defaultTileSizeHeight = tileSize.height
+
+            let scale = Float(UIScreen.main.scale)
+
+            if let image = UIImage(named: "\(name).\(withExtension)") {
+                guard let imageRef = image.cgImage else { return }
+
+                let totalColumns = Int(ceilf(Float(image.size.width / tileSize.width)) * scale)
+                let totalRows = Int(ceilf(Float(image.size.height / tileSize.height)) * scale)
+                let partialColumnWidth = Int(image.size.width.truncatingRemainder(dividingBy: tileSize.width))
+                let partialRowHeight = Int(image.size.height.truncatingRemainder(dividingBy: tileSize.height))
+
+                DispatchQueue.global(qos: .default).async {
+                    for y in 0..<totalRows {
+                        for x in 0..<totalColumns {
+                            if partialRowHeight > 0 && y + 1 == totalRows {
+                                tileSize.height = CGFloat(partialRowHeight)
+                            }
+
+                            if partialColumnWidth > 0 && x + 1 == totalColumns {
+                                tileSize.width = CGFloat(partialColumnWidth)
+                            }
+
+                            let xOffset = CGFloat(x) * defaultTileSizeWidth
+                            let yOffset = CGFloat(y) * defaultTileSizeHeight
+                            let point = CGPoint(x: xOffset, y: yOffset)
+
+                            if let tileImageRef = imageRef.cropping(to: CGRect(origin: point, size: tileSize)) {
+
+                                let path = "\(imageSizeDirectoryPath)/" +
+                                    "\(name)_\(Int(size.width))" +
+                                "_\(level)_\(x)_\(y).\(withExtension)"
+
+                                generateImage(tileImageRef: tileImageRef, path: path, withExtension: withExtension)
+                            }
+                        }
+                    }
+                    print("\(size.width) image cutting finish")
+                    completion(true)
+                }
+            }
+        } else {
+            completion(false)
+        }
+    }
+
     public class func saveTileOf(size: [CGSize], name: String,
                                  withExtension: String, completion: @escaping (Bool) -> Void ) {
 
