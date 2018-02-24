@@ -8,12 +8,19 @@
 
 import XCTest
 @testable import THTiledImageView
+import Kingfisher
 
 class ImageManagerTest: XCTestCase {
 
     var downloadImage1: UIImage?
     var downloadImage2: UIImage?
 
+    var cachedImage: UIImage?
+
+    override func tearDown() {
+        ImageCache.default.removeImage(forKey: "https://dl.dropbox.com/s/g1oomszqsnc5eue/smallBench.jpg")
+        super.tearDown()
+    }
     func testDownloadMangerSuccess() {
         let url = URL(string: "https://dl.dropbox.com/s/g1oomszqsnc5eue/smallBench.jpg")!
 
@@ -63,6 +70,31 @@ class ImageManagerTest: XCTestCase {
     }
 
     func testCacheManger() {
+        let url = URL(string: "https://dl.dropbox.com/s/g1oomszqsnc5eue/smallBench.jpg")!
 
+        THImageDownloadManager.default.downloadEachTiles(path: url) { image, _, _ in
+
+            guard let image = image else { return }
+
+            THImageCacheManager.default.cacheTiles(image: image, imageIdentifier: url.absoluteString) {
+                if let image = THImageCacheManager.default.retrieveTiles(key: url.absoluteString) {
+                    self.cachedImage = image
+                }
+            }
+        }
+
+        let pred = NSPredicate(format: "cachedImage != nil")
+        let exp = expectation(for: pred, evaluatedWith: self, handler: nil)
+        let result = XCTWaiter.wait(for: [exp], timeout: 7.0)
+
+        let messages = ["The call to cache image has error", "The call to cache image into another error"]
+
+        if result == XCTWaiter.Result.completed {
+            XCTAssertNotNil(cachedImage, messages[0])
+        } else if result == XCTWaiter.Result.timedOut {
+            XCTAssert(false, "Request Time out")
+        } else {
+            XCTAssert(false, messages[1])
+        }
     }
 }
