@@ -1,7 +1,7 @@
 #  THTiledImageView
 
 [![Build Status](https://travis-ci.org/TileImageTeamiOS/THTiledImageView.svg?branch=master)](https://travis-ci.org/TileImageTeamiOS/THTiledImageView)
-[![Code Coverage](https://codecov.io/gh/TileImageTeamiOS/THTiledImageView/branch/master/graphs/badge.svg)](https://github.com/TileImageTeamiOS/THTiledImageView)
+[![Code Coverage](https://codecov.io/gh/TileImageTeamiOS/THTiledImageView/branch/master/graphs/badge.svg)](https://codecov.io/gh/TileImageTeamiOS/THTiledImageView)
 [![Version](https://cocoapod-badges.herokuapp.com/v/THTiledImageView/badge.png)](https://github.com/TileImageTeamiOS/THTiledImageView)
 [![platform](https://cocoapod-badges.herokuapp.com/p/THTiledImageView/badge.png)](https://github.com/TileImageTeamiOS/THTiledImageView)
 [![License](https://cocoapod-badges.herokuapp.com/l/THTiledImageView/badge.png)](https://github.com/TileImageTeamiOS/THTiledImageView)
