@@ -53,11 +53,11 @@ public protocol THTiledImageViewDataSource: class {
 }
 
 extension THTiledImageViewDataSource {
-    var contentSize: CGSize {
+    public var contentSize: CGSize {
         return self.originalImageSize
     }
 
-    func requestBackgroundImage(completionHandler: @escaping (UIImage?) -> Void) {
+    public func requestBackgroundImage(completionHandler: @escaping (UIImage?) -> Void) {
         guard let url = self.backgroundImageURL else {
             return
         }

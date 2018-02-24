@@ -19,10 +19,6 @@ class ViewController: UIViewController {
 
         let tiles: [CGSize] = [CGSize(width: 1024, height: 1024), CGSize(width: 512, height: 512), CGSize(width: 256, height: 256)]
 
-//        UIImage.saveTileOf(size: tiles, name: "bench", withExtension: "jpg") { _ in
-//
-//        }
-
         let imageSize = CGSize(width: 5214, height: 7300)
         let thumbnailImageURL = Bundle.main.url(forResource: "smallBench", withExtension: "jpg")!
 
@@ -42,10 +38,10 @@ class ViewController: UIViewController {
 
         dataSource.thumbnailImageName = "bench"
 
-        // 줌을 가장 많이 확대한 수준
+        // zoomIn
         dataSource.maxTileLevel = 3
 
-        // 줌이 가장 확대가 안 된 수준
+        // zoomOut
         dataSource.minTileLevel = 1
 
         dataSource.maxZoomLevel = 8
