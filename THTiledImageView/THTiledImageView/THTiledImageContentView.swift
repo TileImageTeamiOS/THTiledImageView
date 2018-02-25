@@ -19,6 +19,7 @@ class THTiledImageContentView: UIView {
         self.backgroundImageView = UIImageView(frame: tileImageView.bounds)
         super.init(frame: tileImageView.frame)
 
+        tileImageView.backgroundColor = UIColor.black.withAlphaComponent(0)
         backgroundImageView.contentMode = .scaleAspectFit
 
         if let backgroundImage = dataSource.backgroundImage {
